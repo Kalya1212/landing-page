@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalya — Wise technology, gentle heart.</title>
+  <meta name="description" content="Kalya is a spiritually intelligent companion for a life well‑lived. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
+  <meta name="theme-color" content="#0F1012" />
+
+  <!-- [Styles unchanged, omitted for brevity] -->
+  <style>
+    /* ...your full CSS from before... */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- [Header, main content, footer unchanged] -->
+    <!-- ...your full HTML from before... -->
+    <form class="capture" id="waitlist-form" name="waitlist" aria-label="Waitlist signup" onsubmit="return submitWaitlist(event)">
+      <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+      <button class="btn gold" type="submit">Notify me</button>
+      <div class="hint" id="waitlist-status" role="status" aria-live="polite"></div>
+    </form>
+    <div class="legal">By joining, you agree to a small number of updates about Kalya’s beta. Your data is kept with care.</div>
+    <!-- ...rest of your HTML... -->
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Waitlist submission (GitHub Pages friendly)
+    // Option 1: mailto (no backend). Now sends to sylvie@kalya.io
+    function submitWaitlist(e){
+      e.preventDefault();
+      const email = e.target.email.value.trim();
+      if(!email) return false;
+      const to = 'sylvie@kalya.io'; // updated!
+      const subject = encodeURIComponent('Kalya waitlist');
+      const body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      const status = document.getElementById('waitlist-status');
+      status.textContent = 'Opening your email app… If nothing happens, write to sylvie@kalya.io.';
+      return false;
+    }
+  </script>
+</body>
+</html>
