@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalya — Wise technology, gentle heart.</title>
+  <meta name="description" content="Kalya is a spiritually intelligent companion for a life well‑lived. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
+  <meta name="theme-color" content="#0F1012" />
+  <style>
+    body {
+      background: #161319;
+      color: #f5f1e8;
+      font-family: 'Inter', 'Avenir', 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 2rem 1rem 0rem 1rem;
+      text-align: center;
+    }
+    .logo {
+      margin: 2rem auto 0.5rem auto;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #ffde8a;
+      font-family: 'Georgia', serif;
+    }
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin: 1.2rem 0 0.9rem 0;
+      line-height: 1.3;
+      color: #f5f1e8;
+    }
+    .subtitle {
+      font-size: 1.04rem;
+      color: #c6b6e7;
+      margin: 0 0 2.3rem 0;
+      line-height: 1.5;
+    }
+    .capture {
+      margin: 1.7rem 0 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      align-items: center;
+    }
+    .capture input[type="email"] {
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      min-width: 250px;
+      background: #231f2b;
+      color: #f5f1e8;
+    }
+    .btn.gold {
+      background: linear-gradient(90deg,#ffde8a 0%,#ffdfb1 100%);
+      color: #1b1820;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .btn.gold:hover {
+      box-shadow: 0 0 10px #ffde8a44;
+    }
+    .hint {
+      color: #c6b6e7;
+      font-size: 0.94rem;
+      margin-top: 0.3rem;
+      min-height: 1.2em;
+    }
+    .legal {
+      font-size: 0.84rem;
+      color: #8e87a7;
+      margin: 1.4rem 0 2.2rem 0;
+      text-align: center;
+    }
+    footer {
+      margin: 3rem 0 1.3rem 0;
+      padding-top: 1.3rem;
+      border-top: 1px solid #2e2842;
+      font-size: 0.94rem;
+      color: #bda6ff;
+    }
+    .foot-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .mini {
+      text-align: left;
+      font-size: 0.93rem;
+    }
+    .links {
+      text-align: right;
+      font-size: 0.93rem;
+      display: flex;
+      gap: 1.1rem;
+    }
+    .links a {
+      color: #ffde8a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.18s;
+    }
+    .links a:hover {
+      color: #c6b6e7;
+      text-decoration: underline;
+    }
+    a {
+      color: #bda6ff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        max-width: 98vw;
+        padding: 1.7rem 0.3rem 0.2rem 0.3rem;
+      }
+      .foot-grid {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .mini, .links {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Kalya</div>
+    <h1>Wise technology, gentle heart.</h1>
+    <div class="subtitle">
+      Kalya is a spiritually intelligent companion for a life well‑lived.<br>
+      Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion.
+    </div>
+    <form class="capture" id="waitlist-form" name="waitlist" aria-label="Waitlist signup" onsubmit="return submitWaitlist(event)">
+      <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+      <button class="btn gold" type="submit">Notify me</button>
+      <div class="hint" id="waitlist-status" role="status" aria-live="polite"></div>
+    </form>
+    <div class="legal">By joining, you agree to a small number of updates about Kalya’s beta. Your data is kept with care.</div>
+  </div>
+  <footer>
+    <div class="foot-grid">
+      <div class="mini">
+        © <span id="year"></span> Kalya. All rights reserved.<br>
+        <a href="mailto:sylvie@kalya.io" style="color:var(--plum);text-decoration:underline;">sylvie@kalya.io</a>
+      </div>
+      <div class="links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function submitWaitlist(e){
+      e.preventDefault();
+      const email = e.target.email.value.trim();
+      if(!email) return false;
+      const to = 'sylvie@kalya.io';
+      const subject = encodeURIComponent('Kalya waitlist');
+      const body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      const status = document.getElementById('waitlist-status');
+      status.textContent = 'Opening your email app… If nothing happens, write to sylvie@kalya.io.';
+      return false;
+    }
+  </script>
+</body>
+</html>
