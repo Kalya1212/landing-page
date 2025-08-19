@@ -6,10 +6,9 @@
   <title>Kalya — From intelligence to compassion.</title>
   <meta name="description" content="Kalya is your compassionate and trustworthy Noble Friend. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
   <meta name="theme-color" content="#0F1012" />
-  <!-- Graphik font: You need to add your own CDN or Adobe Fonts project link here -->
+  <!-- Add your Graphik webfont link here if available -->
   <!-- Example: <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css" /> -->
   <style>
-    /* If Graphik is included via Typekit or other, it will take precedence */
     body {
       margin: 0;
       padding: 0;
@@ -19,6 +18,10 @@
       background: radial-gradient(circle at 80vw 40vh, #ffe066 0%, #cbb3ea 40%, #edeedc 70%);
       background-size: cover;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: flex-start;
     }
     .container {
       max-width: 900px;
@@ -27,7 +30,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      min-height: 85vh;
+      min-height: 70vh;
+      flex: 1;
     }
     .kalya-logo {
       font-size: 6vw;
@@ -37,7 +41,7 @@
       margin-top: 10vh;
       margin-bottom: 2vw;
       line-height: 1.05;
-      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+      font-family: inherit;
     }
     .kalya-logo .dot {
       color: #ffde8a;
@@ -52,16 +56,17 @@
       margin-bottom: 1vw;
       color: #6d5fa7;
       letter-spacing: 0.01em;
-      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+      font-family: inherit;
     }
     .tagline {
       font-size: 1.15vw;
       margin-bottom: 1vw;
-      color: #7c6fa4;
+      color: #fff; /* White tagline */
       font-style: normal;
       font-weight: 500;
       letter-spacing: 0.01em;
-      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+      font-family: inherit;
+      text-shadow: 0 1px 10px #cbb3ea44;
     }
     .mission {
       font-size: 1.15vw;
@@ -70,7 +75,7 @@
       font-style: normal;
       font-weight: 500;
       letter-spacing: 0.01em;
-      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+      font-family: inherit;
     }
     .waitlist-form {
       margin: 2vw 0 2vw 0;
@@ -99,14 +104,15 @@
     .waitlist-form button {
       background: linear-gradient(90deg,#ffde8a 0%,#ffdfb1 100%);
       color: #443e5a;
-      font-weight: 700;
-      padding: 0.7vw 1.7vw;
+      font-weight: 600;
+      padding: 0.3vw 1vw; /* Smaller height */
       border-radius: 6px;
       border: none;
-      font-size: 1.1vw;
+      font-size: 0.9vw; /* Smaller font size */
       cursor: pointer;
       transition: box-shadow 0.2s;
       font-family: inherit;
+      min-width: 90px;
     }
     .waitlist-form button:hover {
       box-shadow: 0 0 10px #ffde8a44;
@@ -121,6 +127,53 @@
       font-size: 0.95vw;
       color: #8e87a7;
       margin-top: 1vw;
+    }
+    footer {
+      width: 100%;
+      margin-top: 2vw;
+      padding-top: 1vw;
+      border-top: 1px solid #cbb3ea;
+      font-size: 1vw;
+      color: #7c6fa4;
+      background: none;
+      font-family: inherit;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .foot-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .mini {
+      text-align: left;
+      font-size: 1vw;
+    }
+    .links {
+      text-align: right;
+      font-size: 1vw;
+      display: flex;
+      gap: 1.1rem;
+    }
+    .links a {
+      color: #ffde8a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.18s;
+    }
+    .links a:hover {
+      color: #6d5fa7;
+      text-decoration: underline;
+    }
+    .email-link {
+      color: #6d5fa7;
+      text-decoration: underline;
+      font-weight: 500;
     }
     @media (max-width: 700px) {
       .container {
@@ -140,8 +193,20 @@
       .waitlist-form input[type="email"],
       .waitlist-form button,
       .waitlist-hint,
-      .waitlist-legal {
+      .waitlist-legal,
+      footer,
+      .links,
+      .mini {
         font-size: 3.5vw;
+      }
+      .waitlist-form button {
+        padding: 1vw 3vw;
+        min-width: 120px;
+      }
+      .foot-grid {
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
       }
     }
   </style>
@@ -169,7 +234,21 @@
       </div>
     </form>
   </div>
+  <footer>
+    <div class="foot-grid">
+      <div class="mini">
+        © <span id="year"></span> Kalya. All rights reserved.<br>
+        <a href="mailto:sylvie@kalya.io" class="email-link">sylvie@kalya.io</a>
+      </div>
+      <div class="links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
     function submitWaitlist(e){
       e.preventDefault();
       const email = e.target.email.value.trim();
