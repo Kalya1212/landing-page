@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalya — From intelligence to compassion.</title>
+  <meta name="description" content="Kalya is your compassionate and trustworthy Noble Friend. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
+  <meta name="theme-color" content="#0F1012" />
+  <!-- Graphik font: You need to add your own CDN or Adobe Fonts project link here -->
+  <!-- Example: <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css" /> -->
+  <style>
+    /* If Graphik is included via Typekit or other, it will take precedence */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+      color: #443e5a;
+      background: radial-gradient(circle at 80vw 40vh, #ffe066 0%, #cbb3ea 40%, #edeedc 70%);
+      background-size: cover;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5vw 4vw 0vw 4vw;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 85vh;
+    }
+    .kalya-logo {
+      font-size: 6vw;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin-top: 10vh;
+      margin-bottom: 2vw;
+      line-height: 1.05;
+      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+    }
+    .kalya-logo .dot {
+      color: #ffde8a;
+    }
+    .kalya-logo .io {
+      color: #6d5fa7;
+    }
+    .subtitle {
+      font-size: 2vw;
+      font-style: italic;
+      margin-top: 1vw;
+      margin-bottom: 1vw;
+      color: #6d5fa7;
+      letter-spacing: 0.01em;
+      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+    }
+    .tagline {
+      font-size: 1.15vw;
+      margin-bottom: 1vw;
+      color: #7c6fa4;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+    }
+    .mission {
+      font-size: 1.15vw;
+      margin-bottom: 2vw;
+      color: #443e5a;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      font-family: 'Graphik', 'Inter', 'Avenir', 'Segoe UI', Arial, sans-serif;
+    }
+    .waitlist-form {
+      margin: 2vw 0 2vw 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 2vw 2vw 2vw 2vw;
+      box-shadow: 0 2px 16px rgba(100,60,160,0.08);
+      max-width: 410px;
+    }
+    .waitlist-form input[type="email"] {
+      padding: 0.7vw 1vw;
+      border-radius: 6px;
+      border: 1px solid #dad7e8;
+      outline: none;
+      font-size: 1.1vw;
+      background: #edeedc;
+      color: #443e5a;
+      font-family: inherit;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .waitlist-form button {
+      background: linear-gradient(90deg,#ffde8a 0%,#ffdfb1 100%);
+      color: #443e5a;
+      font-weight: 700;
+      padding: 0.7vw 1.7vw;
+      border-radius: 6px;
+      border: none;
+      font-size: 1.1vw;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .waitlist-form button:hover {
+      box-shadow: 0 0 10px #ffde8a44;
+    }
+    .waitlist-hint {
+      color: #7c6fa4;
+      font-size: 1vw;
+      min-height: 1.2em;
+      margin-bottom: 0.5vw;
+    }
+    .waitlist-legal {
+      font-size: 0.95vw;
+      color: #8e87a7;
+      margin-top: 1vw;
+    }
+    @media (max-width: 700px) {
+      .container {
+        max-width: 98vw;
+        padding: 8vw 2vw 0vw 2vw;
+        min-height: 95vh;
+      }
+      .kalya-logo {
+        font-size: 11vw;
+        margin-top: 6vh;
+      }
+      .subtitle {
+        font-size: 4vw;
+      }
+      .tagline,
+      .mission,
+      .waitlist-form input[type="email"],
+      .waitlist-form button,
+      .waitlist-hint,
+      .waitlist-legal {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="kalya-logo">
+      Kalya<span class="dot">.</span><span class="io">io</span>
+    </div>
+    <div class="subtitle">
+      Your compassionate and trustworthy Noble Friend
+    </div>
+    <div class="tagline">
+      From intelligence to compassion.
+    </div>
+    <div class="mission">
+      We are building the N°1 trusted AI solution & companion for individuals & communities seeking grounded wisdom, mental clarity, and deep presence in the digital age.
+    </div>
+    <form class="waitlist-form" id="waitlist-form" name="waitlist" aria-label="Waitlist signup" onsubmit="return submitWaitlist(event)">
+      <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+      <button type="submit">Notify me</button>
+      <div class="waitlist-hint" id="waitlist-status" role="status" aria-live="polite"></div>
+      <div class="waitlist-legal">
+        By joining, you agree to a small number of updates about Kalya’s beta. Your data is kept with care.
+      </div>
+    </form>
+  </div>
+  <script>
+    function submitWaitlist(e){
+      e.preventDefault();
+      const email = e.target.email.value.trim();
+      if(!email) return false;
+      const to = 'sylvie@kalya.io';
+      const subject = encodeURIComponent('Kalya waitlist');
+      const body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      document.getElementById('waitlist-status').textContent = 'Opening your email app… If nothing happens, write to sylvie@kalya.io.';
+      return false;
+    }
+  </script>
+</body>
+</html>
