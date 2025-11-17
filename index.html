@@ -100,43 +100,28 @@
   </style>
 </head>
 <body>
-  <div class="page" role="main">
-    <!-- organic motif svg inspired by app center ring -->
-    <svg class="motif" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
-          <stop offset="60%" stop-color="#F4EEE8" stop-opacity="1" />
-          <stop offset="100%" stop-color="#E9E0D6" stop-opacity="1" />
-        </radialGradient>
-      </defs>
-      <g fill="url(#g1)">
-        <path d="M210 10c40 0 70 20 90 40s40 50 40 80-20 70-40 90-50 40-80 40-70-20-90-40-40-50-40-80 20-70 40-90 50-40 80-40z"/>
-      </g>
-    </svg>
+  <div class="hero" role="main">
+    <div class="hero-bg"></div>
 
-    <div class="center">
-      <div class="logo">
-        <div class="mark" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" fill="#FFFFFF" stroke="#EDE6DA" stroke-width="1"/>
-          </svg>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-start;">
-          <span style="font-weight:500;">kalya<span style="margin-left:6px;color:var(--accent-gold);">.</span><span style="color:var(--accent-mauve);margin-left:6px">io</span></span>
-        </div>
-      </div>
+    <div class="content">
+      <div class="logo-text">Kalya<span class="dot">.</span><span class="io">io</span></div>
 
       <div class="subtitle">Your compassionate and trustworthy Noble Friend</div>
       <div class="tagline">From intelligence to compassion.</div>
 
-      <div class="mission">We are building the N°1 trusted AI companion for individuals and communities seeking grounded wisdom, mental clarity, and deep presence in the digital age.</div>
+      <div class="mission">
+        We help individuals and communities cultivate grounded wisdom, mental clarity, and deep presence in the digital age. A mindful AI companion built for trust, care, and inner balance.
+      </div>
 
       <form class="cta" id="waitlist" onsubmit="return submitWaitlist(event)" aria-label="Join waitlist">
         <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
         <button type="submit">Notify me</button>
       </form>
+    </div>
 
+    <div class="screens">
+      <img src="/assets/screen1.png" alt="Kalya app splash screen" class="screen s1" />
+      <img src="/assets/screen2.png" alt="Kalya app dashboard screen" class="screen s2" />
     </div>
 
     <footer>
