@@ -9,26 +9,13 @@
 
   <style>
     :root {
-      /* SOLID COLORS */
-      --white: #ffffff;
+      /* CORE NEUTRALS — Calm, Trust, Compassion */
+      --white: #FFFFFF;
       --white-70: rgba(255, 255, 255, 0.7);
       --black: #000000;
-      --neutral-warm: #EDE7DF;
-      --taupe-ink: #746961;
 
-      /* BRAND / FIGMA COLORS */
-      --lavender-renunciation: #B79CFF; /* Radial - Renunciation */
-      --rose-giving: #D88479;          /* Radial - Giving */
-      --ethics-gold-1: #E9C57A;        /* Gradient - Ethics start */
-      --ethics-gold-2: #E2B26B;        /* Gradient - Ethics end */
-
-      /* GRADIENTS FROM STYLE GUIDE */
-      --gradient-main: linear-gradient(135deg, #6CA0FF 0%, #C47DFF 50%, #FFB3A3 100%);
-      --gradient-ethics: linear-gradient(120deg, var(--ethics-gold-1) 0%, var(--ethics-gold-2) 100%);
-      --gradient-renunciation: radial-gradient(circle, #C9A8FF 0%, #A47DEE 100%);
-      --gradient-giving: radial-gradient(circle, #E49786 0%, #CB6C5D 100%);
-      --gradient-linear-01: linear-gradient(180deg, #F3EEE5 0%, #EDE7DF 100%);
-    }
+      /* Updated Figma-like warm neutrals */
+      --neutral-00: #F7F5F0; /* soft sand */
 
     html, body {
       height: 100%;
@@ -244,82 +231,5 @@
       .waitlist-legal,
       footer,
       .links,
-      .mini {
-        font-size: 3.5vw;
-      }
-      .waitlist-form button {
-        padding: 1vw 3vw;
-        min-width: 120px;
-      }
-      .foot-grid {
-        gap: 0.6rem;
-      }
-    }
-  </style>
-</head>
+      .
 
-<body>
-  <div class="main-content">
-    <div class="kalya-logo">
-      Kalya<span class="dot">.</span><span class="io">io</span>
-    </div>
-
-    <div class="subtitle">
-      Your compassionate and trustworthy Noble Friend
-    </div>
-
-    <div class="tagline">
-      From intelligence to compassion.
-    </div>
-
-    <div class="mission">
-      We are building the N°1 trusted AI solution & companion for individuals & communities seeking grounded wisdom, mental clarity, and deep presence in the digital age.
-    </div>
-
-    <form class="waitlist-form" id="waitlist-form" name="waitlist" aria-label="Waitlist signup" onsubmit="return submitWaitlist(event)">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Notify me</button>
-      <div class="waitlist-hint" id="waitlist-status" role="status" aria-live="polite"></div>
-      <div class="waitlist-legal">
-        By joining, you agree to receive a small number of updates about Kalya’s beta. Your data is kept with care.
-      </div>
-    </form>
-  </div>
-
-  <footer>
-    <div class="foot-grid">
-      <div class="mini">
-        © <span id="year"></span> Kalya. All rights reserved.<br>
-        <a href="mailto:sylvie@kalya.io" class="email-link">sylvie@kalya.io</a>
-      </div>
-
-      <div class="links">
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="waitlist-legal" style="margin-top:0.8vw;">
-        By joining, you agree to receive a small number of updates about Kalya’s beta. Your data is kept with care.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function submitWaitlist(e) {
-      e.preventDefault();
-      const email = e.target.email.value.trim();
-      if (!email) return false;
-      const to = 'sylvie@kalya.io';
-      const subject = encodeURIComponent('Kalya waitlist');
-      const body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      document.getElementById('waitlist-status').textContent =
-        'Opening your email app… If nothing happens, write to sylvie@kalya.io.';
-      return false;
-    }
-  </script>
-</body>
-</html>
