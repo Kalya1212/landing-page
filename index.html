@@ -12,21 +12,14 @@
 
   <style>
     :root{
-      /* core neutrals from app splash */
       --bg-00: #FBF8F5;
       --bg-10: #F6F2EE;
       --bg-20: #EFE7DE;
-      --bg-30: #E5DBD0;
-
       --text-primary: #5A524A;
       --muted-ink: #72695F;
-
       --accent-gold: #D6BE96;
       --accent-mauve: #C9C2D3;
-
       --glass: rgba(255,255,255,0.72);
-      --glass-strong: rgba(255,255,255,0.9);
-
       --gradient-bg: radial-gradient(circle at 40% 35%, #FFFFFF 0%, var(--bg-10) 35%, var(--bg-20) 100%);
     }
 
@@ -45,7 +38,6 @@
     .hero{
       width:100%;
       max-width:780px;
-      margin:0 auto;
       padding:80px 20px 40px;
       text-align:center;
       display:flex;
@@ -60,12 +52,8 @@
       letter-spacing:-0.02em;
       color:var(--text-primary);
     }
-    .logo-text .dot{
-      color:var(--accent-gold);
-    }
-    .logo-text .io{
-      color:var(--accent-mauve);
-    }
+    .logo-text .dot{color:var(--accent-gold)}
+    .logo-text .io{color:var(--accent-mauve)}
 
     .subtitle{
       font-size:22px;
@@ -135,7 +123,6 @@
       gap:20px;
       justify-content:center;
     }
-
     .screens img{
       width:240px;
       height:auto;
@@ -149,7 +136,6 @@
       color:var(--muted-ink);
       font-size:13px;
     }
-
     footer a{
       color:var(--accent-mauve);
       text-decoration:underline;
@@ -173,7 +159,7 @@
     <div class="tagline">From intelligence to compassion.</div>
 
     <div class="mission">
-      We help individuals and communities cultivate grounded wisdom, mental clarity, and deep presence in the digital age.
+      We help individuals and communities cultivate grounded wisdom, mental clarity, and deep presence in the digital age.<br><br>
       A mindful AI companion built for trust, care, and inner balance.
     </div>
 
@@ -207,7 +193,7 @@
 
       const btn = e.target.querySelector('button');
       btn.textContent = 'Opening…';
-      setTimeout(()=> btn.textContent = 'Notify me', 2500);
+      setTimeout(()=> btn.textContent='Notify me',2500);
       return false;
     }
   </script>
