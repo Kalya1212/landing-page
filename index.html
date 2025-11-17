@@ -7,247 +7,155 @@
   <meta name="description" content="Kalya is your compassionate and trustworthy Noble Friend. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
   <meta name="theme-color" content="#F7F5F0" />
 
-  <!-- Outfit Font -->
+  <!-- Outfit font -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      /* Warm, calm neutrals */
-      --neutral-00: #F7F5F0;
-      --neutral-10: #EEE9E0;
-      --neutral-20: #E3DDD3;
-      --neutral-40: #C8C0B6;
+    :root{
+      /* core neutrals from app splash */
+      --bg-00: #FBF8F5; /* very light sand */
+      --bg-10: #F6F2EE; /* light cream */
+      --bg-20: #EFE7DE; /* soft beige */
+      --bg-30: #E5DBD0; /* grounding tone */
 
-      /* Brand accents */
-      --accent-gold-1: #DFC894;
-      --accent-gold-2: #D7B982;
+      --text-primary: #5A524A; /* warm charcoal */
+      --muted-ink: #72695F;
+
+      --accent-gold: #D6BE96;
       --accent-mauve: #C9C2D3;
-      --accent-rose: #D7B4A8;
+      --accent-rose: #D9B0A6;
 
-      /* Text */
-      --text-primary: #6E665F;
+      --glass: rgba(255,255,255,0.72);
+      --glass-strong: rgba(255,255,255,0.9);
 
-      /* Gradients */
-      --gradient-main: linear-gradient(145deg, #F7F5F0 0%, #EEE9E0 45%, #E3DDD3 100%);
-      --gradient-ethics: linear-gradient(125deg, var(--accent-gold-1) 0%, var(--accent-gold-2) 100%);
-      --surface-bg: linear-gradient(180deg, #F7F5F0 0%, #EEE9E0 100%);
-
-      --white-70: rgba(255, 255, 255, 0.7);
+      --gradient-bg: radial-gradient(circle at 40% 35%, #FFFFFF 0%, var(--bg-10) 35%, var(--bg-20) 100%);
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--gradient-main);
-      color: var(--text-primary);
+    html,body{height:100%;margin:0;padding:0}
+    body{
+      font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:var(--gradient-bg);
+      color:var(--text-primary);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;justify-content:center;min-height:100vh;
     }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    /* Page container mimicking mobile portrait card */
+    .page{
+      width:min(760px,92vw);
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.78));
+      box-shadow: 0 18px 40px rgba(22,20,18,0.12);
+      padding:6.5rem 3.5rem;
+      box-sizing:border-box;
+      max-width:780px;
+      min-height:520px;
+      position:relative;
+      overflow:hidden;
     }
 
-    .main-content {
-      max-width: 580px;
-      padding: 4rem 2rem 2rem;
-      text-align: center;
+    /* subtle organic motif (SVG) in background */
+    .page .motif{
+      position:absolute;left:50%;top:14%;transform:translateX(-50%);
+      opacity:0.14;width:420px;height:420px;pointer-events:none;filter:blur(6px);
     }
 
-    .kalya-logo {
-      font-size: 4.6rem;
-      font-weight: 500; /* Outfit Medium */
-      letter-spacing: -0.01em;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
+    .center{
+      display:flex;flex-direction:column;align-items:center;gap:18px;z-index:2;position:relative;
     }
 
-    .kalya-logo .dot {
-      color: var(--accent-gold-1);
+    .logo{
+      font-size:44px;line-height:1;font-weight:500;letter-spacing:-0.02em;color:var(--text-primary);
+      display:flex;align-items:center;gap:14px;
     }
-    .kalya-logo .io {
-      color: var(--accent-mauve);
+    .logo .mark{
+      width:58px;height:58px;border-radius:50%;background:var(--glass-strong);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
     }
+    .logo .dot{color:var(--accent-gold);font-weight:600}
+    .logo .io{color:var(--accent-mauve)}
 
-    .subtitle {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      color: var(--accent-mauve);
-    }
+    .subtitle{font-size:18px;font-weight:400;color:var(--muted-ink);font-style:normal}
+    .tagline{font-size:20px;font-weight:400;color:var(--text-primary)}
 
-    .tagline {
-      font-size: 1.25rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-    }
+    .mission{max-width:560px;text-align:center;font-size:16px;line-height:1.6;color:var(--muted-ink);font-weight:300;padding:0 12px}
 
-    .mission {
-      font-size: 1.15rem;
-      line-height: 1.55;
-      font-weight: 300;
-      margin-bottom: 2.4rem;
-      color: var(--text-primary);
+    /* Waitlist / CTA glass card */
+    .cta{
+      margin-top:22px;width:100%;max-width:520px;background:var(--glass);backdrop-filter:blur(10px);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,0.06);
     }
+    .cta input{flex:1;border:1px solid rgba(110,102,95,0.06);padding:12px 14px;border-radius:10px;background:transparent;font-size:15px;color:var(--text-primary);outline:none}
+    .cta button{background:linear-gradient(90deg,var(--accent-gold),#E8D9B5);border:none;padding:10px 14px;border-radius:10px;font-weight:500;cursor:pointer;color:var(--text-primary)}
+    .cta small{display:block;font-size:12px;color:var(--muted-ink);opacity:0.9;margin-left:6px}
 
-    /* Waitlist box */
-    .waitlist-form {
-      background: var(--white-70);
-      backdrop-filter: blur(16px);
-      border-radius: 14px;
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    }
+    /* Footer small */
+    footer{position:absolute;left:24px;right:24px;bottom:18px;text-align:center;color:var(--muted-ink);font-size:13px}
+    footer a{color:var(--accent-mauve);text-decoration:underline}
 
-    .waitlist-form input {
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--neutral-20);
-      background: var(--neutral-00);
-      color: var(--text-primary);
-      outline: none;
-    }
-
-    .waitlist-form button {
-      padding: 0.9rem 1.2rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 500;
-      background: var(--gradient-ethics);
-      color: var(--text-primary);
-      transition: box-shadow 0.2s ease;
-    }
-
-    .waitlist-form button:hover {
-      box-shadow: 0 0 12px rgba(0,0,0,0.12);
-    }
-
-    .waitlist-hint {
-      font-size: 0.95rem;
-      color: var(--accent-mauve);
-      min-height: 1.4rem;
-    }
-
-    .waitlist-legal {
-      font-size: 0.85rem;
-      opacity: 0.7;
-      line-height: 1.4;
-      color: var(--text-primary);
-    }
-
-    footer {
-      margin-top: 4rem;
-      padding: 2rem 0;
-      width: 100%;
-      border-top: 1px solid var(--accent-mauve);
-      text-align: center;
-    }
-
-    footer .mini {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    footer .links {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    footer .links a {
-      color: var(--accent-gold-1);
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    footer .links a:hover {
-      color: var(--accent-mauve);
-      text-decoration: underline;
-    }
-
-    .email-link {
-      color: var(--accent-mauve);
-      text-decoration: underline;
-    }
-
-    @media (max-width: 700px) {
-      .kalya-logo {
-        font-size: 3.4rem;
-      }
-      .subtitle {
-        font-size: 1.4rem;
-      }
-      .tagline {
-        font-size: 1.2rem;
-      }
-      .mission {
-        font-size: 1.1rem;
-      }
+    @media (max-width:700px){
+      .page{padding:4.5rem 2rem;border-radius:20px}
+      .logo{font-size:34px}
+      .mission{font-size:15px}
     }
   </style>
 </head>
-
 <body>
-  <div class="main-content">
-    <div class="kalya-logo">
-      Kalya<span class="dot">.</span><span class="io">io</span>
-    </div>
+  <div class="page" role="main">
+    <!-- organic motif svg inspired by app center ring -->
+    <svg class="motif" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+          <stop offset="60%" stop-color="#F4EEE8" stop-opacity="1" />
+          <stop offset="100%" stop-color="#E9E0D6" stop-opacity="1" />
+        </radialGradient>
+      </defs>
+      <g fill="url(#g1)">
+        <path d="M210 10c40 0 70 20 90 40s40 50 40 80-20 70-40 90-50 40-80 40-70-20-90-40-40-50-40-80 20-70 40-90 50-40 80-40z"/>
+      </g>
+    </svg>
 
-    <div class="subtitle">Your compassionate and trustworthy Noble Friend</div>
-    <div class="tagline">From intelligence to compassion.</div>
-
-    <div class="mission">
-      We are building the N°1 trusted AI solution & companion for individuals & communities seeking grounded wisdom,
-      mental clarity, and deep presence in the digital age.
-    </div>
-
-    <form class="waitlist-form" id="waitlist-form" onsubmit="return submitWaitlist(event)">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Notify me</button>
-      <div class="waitlist-hint" id="waitlist-status"></div>
-      <div class="waitlist-legal">
-        By joining, you agree to receive a small number of updates about Kalya’s beta. Your data is kept with care.
+    <div class="center">
+      <div class="logo">
+        <div class="mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="#FFFFFF" stroke="#EDE6DA" stroke-width="1"/>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;">
+          <span style="font-weight:500;">kalya<span style="margin-left:6px;color:var(--accent-gold);">.</span><span style="color:var(--accent-mauve);margin-left:6px">io</span></span>
+        </div>
       </div>
-    </form>
+
+      <div class="subtitle">Your compassionate and trustworthy Noble Friend</div>
+      <div class="tagline">From intelligence to compassion.</div>
+
+      <div class="mission">We are building the N°1 trusted AI companion for individuals and communities seeking grounded wisdom, mental clarity, and deep presence in the digital age.</div>
+
+      <form class="cta" id="waitlist" onsubmit="return submitWaitlist(event)" aria-label="Join waitlist">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+        <button type="submit">Notify me</button>
+      </form>
+
+    </div>
+
+    <footer>
+      © <span id="year"></span> Kalya — <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+    </footer>
   </div>
-
-  <footer>
-    <div class="mini">
-      © <span id="year"></span> Kalya. All rights reserved.<br>
-      <a href="mailto:sylvie@kalya.io" class="email-link">sylvie@kalya.io</a>
-    </div>
-
-    <div class="links">
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    function submitWaitlist(e) {
+    function submitWaitlist(e){
       e.preventDefault();
       const email = e.target.email.value.trim();
-      if (!email) return false;
-      const subject = encodeURIComponent("Kalya waitlist");
-      const body = encodeURIComponent("Please add me to the Kalya waitlist: " + email);
+      if(!email) return false;
+      const subject = encodeURIComponent('Kalya waitlist');
+      const body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
       window.location.href = `mailto:sylvie@kalya.io?subject=${subject}&body=${body}`;
-      document.getElementById("waitlist-status").textContent =
-        "Opening your email app… If nothing happens, write to sylvie@kalya.io.";
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Opening…';
+      setTimeout(()=> btn.textContent='Notify me',2500);
       return false;
     }
   </script>
