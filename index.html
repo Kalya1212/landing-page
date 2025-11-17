@@ -103,13 +103,26 @@
   <div class="hero" role="main">
     
 
-    <div class="content">
-      <div class="logo-text" style="font-size:68px;font-weight:500;letter-spacing:-0.015em; text-align:center;">Kalya<span class="dot">.</span><span class="io">io</span></div>
+    <div class="content" style="text-align:center; max-width:640px; margin:0 auto; padding-top:40px; display:flex; flex-direction:column; align-items:center; gap:22px;">
+      <div class="logo-text" style="font-size:72px; font-weight:500; letter-spacing:-0.018em; margin-bottom:8px;">Kalya<span class="dot">.</span><span class="io">io</span></div>
+
+      <div class="subtitle" style="font-size:20px; font-weight:400; color:var(--muted-ink); max-width:520px; line-height:1.4;">Your compassionate and trustworthy Noble Friend</div>
+      <div class="tagline" style="font-size:26px; font-weight:400; margin-top:4px; color:var(--text-primary);">From intelligence to compassion.</div>
+
+      <div class="mission" style="font-size:18px; line-height:1.65; font-weight:300; color:var(--muted-ink); max-width:540px; margin-top:6px;">
+        We help individuals and communities cultivate grounded wisdom, mental clarity, and deep presence in the digital age. A mindful AI companion built for trust, care, and inner balance.
+      </div>
+
+      <form class="cta" id="waitlist" onsubmit="return submitWaitlist(event)" aria-label="Join waitlist" style="margin-top:22px; width:100%; max-width:440px; display:flex; gap:12px; justify-content:center;">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" style="flex:1; padding:14px 16px; border-radius:12px; font-size:16px;" />
+        <button type="submit" style="padding:14px 18px; border-radius:12px; font-size:16px; font-weight:500;">Notify me</button>
+      </form>
+    </div>
 
       <div class="subtitle">Your compassionate and trustworthy Noble Friend</div>
       <div class="tagline">From intelligence to compassion.</div>
 
-      <div class="mission">
+      <div class="mission" style="text-align:center;">
         We help individuals and communities cultivate grounded wisdom, mental clarity, and deep presence in the digital age. A mindful AI companion built for trust, care, and inner balance.
       </div>
 
@@ -119,7 +132,10 @@
       </form>
     </div>
 
-    
+    <div class="screens">
+      <img src="/assets/screen1.png" alt="Kalya app splash screen" class="screen s1" />
+      <img src="/assets/screen2.png" alt="Kalya app dashboard screen" class="screen s2" />
+    </div>
 
     <footer>
       © <span id="year"></span> Kalya — <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
