@@ -69,7 +69,7 @@
     .circles {
       display: flex;
       flex-direction: row;
-      gap: 64px;
+      gap: 48px;
       justify-content: center;
       width: 100%;
       text-align: center;
@@ -113,12 +113,12 @@
     .circle-item a.cal {
       display: inline-block;
       color: var(--text-muted);
-      font-size: 13px;
+      background: transparent;
+      font-size: 12px;
       font-weight: 300;
-      text-decoration: none;
-      padding: 9px 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
+      text-decoration: underline;
+      padding: 4px 0;
+      border: none;
       transition: opacity 0.15s;
     }
     .circle-item a:hover { opacity: 0.65; }
@@ -144,7 +144,7 @@
       justify-content: space-between;
       padding: 11px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 16px;
+      font-size: 15px;
     }
     .time-row .city { color: var(--text-muted); font-weight: 500; }
     .time-row .time { color: var(--text-primary); font-weight: 300; }
@@ -157,12 +157,14 @@
       line-height: 1.8;
     }
     .corner-dots {
-      position: fixed;
-      bottom: 36px;
-      left: 36px;
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-top: 20px;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 520px;
+      padding: 0 24px;
     }
     .corner-dots span {
       width: 22px;
@@ -170,19 +172,9 @@
       border-radius: 50%;
       display: inline-block;
     }
-    .corner-brand {
-      position: fixed;
-      bottom: 40px;
-      right: 36px;
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-    .corner-brand:hover { opacity: 0.7; }
     footer {
-      margin-top: 40px;
-      padding-bottom: 100px;
+      margin-top: 20px;
+      padding-bottom: 40px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
@@ -193,9 +185,7 @@
       .page-title  { font-size: 52px; }
       .concept     { font-size: 19px; }
       .circle-item .time-word { font-size: 28px; }
-      .circles     { gap: 36px; }
-      .corner-dots { bottom: 24px; left: 24px; }
-      .corner-brand{ bottom: 28px; right: 24px; }
+      .circles     { gap: 28px; }
     }
   </style>
 </head>
@@ -221,7 +211,7 @@
         <p class="sub">5 minutes · every day</p>
         <div class="btn-group">
           <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
-          <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">📅 add to calendar</a>
+          <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DEZvArOkKcuUjhpV7gAALAAAAMjT7T4DBHFb_1fg30o1tTvIW9jFNJVYZbgMIt20ypDPgW-BwgXucygt0Q9fB_IpG5W-_asePXzV668frjAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">📅 add to calendar</a>
         </div>
       </div>
 
@@ -231,7 +221,7 @@
         <p class="sub">5 minutes · every day</p>
         <div class="btn-group">
           <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
-          <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
+          <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DDIEbHWMqI2a9_tzfAAALAAAAOeYJ70d2RwzMpieG4cRYM_2gudd1-2s6UTDtbSISt0eOlIGqXV5yXha5DHqrvHiExakQYMepvBntgmY2DAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
         </div>
       </div>
 
@@ -264,18 +254,17 @@
 
   </div>
 
-  <footer>
-    &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
-    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
-  </footer>
-
+  <!-- DOTS IN FLOW — NOT FIXED -->
   <div class="corner-dots">
     <span style="background:var(--accent-gold)"></span>
     <span style="background:var(--accent-purple)"></span>
     <span style="background:var(--accent-coral)"></span>
   </div>
 
-  <a href="https://kalya.io" class="corner-brand">kalya.io</a>
+  <footer>
+    &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
+    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
