@@ -146,6 +146,8 @@
       color: var(--text-muted);
       line-height: 1.8;
     }
+
+    /* DESKTOP — fixed corners */
     .corner-dots {
       position: fixed;
       bottom: 36px;
@@ -172,6 +174,11 @@
       text-decoration: none;
     }
     .corner-brand:hover { opacity: 0.7; }
+
+    /* MOBILE — dots in flow, corners hidden */
+    .mobile-dots {
+      display: none;
+    }
     footer {
       margin-top: 40px;
       padding-bottom: 100px;
@@ -181,13 +188,33 @@
       font-weight: 300;
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
+
     @media (max-width: 700px) {
-      .page-title  { font-size: 52px; }
-      .concept     { font-size: 19px; }
+      .page-title   { font-size: 52px; }
+      .concept      { font-size: 19px; }
       .circle-item .time-word { font-size: 22px; }
-      .circles     { gap: 40px; }
-      .corner-dots { bottom: 24px; left: 24px; }
-      .corner-brand{ bottom: 28px; right: 24px; }
+      .circles      { gap: 40px; }
+      .corner-dots  { display: none; }
+      .corner-brand { display: none; }
+      .mobile-dots  {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 780px;
+        padding: 0 24px;
+        margin-top: 20px;
+      }
+      .mobile-dots span {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      footer {
+        padding-bottom: 40px;
+      }
     }
   </style>
 </head>
@@ -227,7 +254,7 @@
 
     </div>
 
-    <!-- TIME ZONE TABLE — NO DIVIDER -->
+    <!-- TIME ZONE TABLE -->
     <div class="times">
       <p class="times-label">Your time</p>
       <div class="time-row anchor">
@@ -252,19 +279,25 @@
 
   </div>
 
+  <!-- MOBILE DOTS IN FLOW -->
+  <div class="mobile-dots">
+    <span style="background:var(--accent-gold)"></span>
+    <span style="background:var(--accent-purple)"></span>
+    <span style="background:var(--accent-coral)"></span>
+  </div>
+
   <footer>
     &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
     <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
   </footer>
 
-  <!-- FIXED BOTTOM-LEFT DOTS -->
+  <!-- DESKTOP FIXED CORNERS -->
   <div class="corner-dots">
     <span style="background:var(--accent-gold)"></span>
     <span style="background:var(--accent-purple)"></span>
     <span style="background:var(--accent-coral)"></span>
   </div>
 
-  <!-- FIXED BOTTOM-RIGHT BRAND -->
   <div class="corner-brand">kalya.io</div>
 
   <script>
