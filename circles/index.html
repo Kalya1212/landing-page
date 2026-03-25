@@ -117,11 +117,6 @@
       transition: opacity 0.15s;
     }
     .circle-item a:hover { opacity: 0.65; }
-    .divider {
-      width: 32px;
-      height: 1px;
-      background: var(--border);
-    }
     .times {
       width: 100%;
       max-width: 480px;
@@ -152,14 +147,12 @@
       line-height: 1.8;
     }
     .corner-dots {
+      position: fixed;
+      bottom: 36px;
+      left: 36px;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 20px;
-      justify-content: flex-start;
-      width: 100%;
-      max-width: 780px;
-      padding: 0 24px;
     }
     .corner-dots span {
       width: 22px;
@@ -167,9 +160,21 @@
       border-radius: 50%;
       display: inline-block;
     }
+    .corner-brand {
+      position: fixed;
+      bottom: 40px;
+      right: 36px;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+    .corner-brand:hover { opacity: 0.7; }
     footer {
-      margin-top: 20px;
-      padding-bottom: 40px;
+      margin-top: 40px;
+      padding-bottom: 100px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
@@ -179,8 +184,10 @@
     @media (max-width: 700px) {
       .page-title  { font-size: 52px; }
       .concept     { font-size: 19px; }
-      .circle-item .time-word { font-size: 28px; }
+      .circle-item .time-word { font-size: 22px; }
       .circles     { gap: 40px; }
+      .corner-dots { bottom: 24px; left: 24px; }
+      .corner-brand{ bottom: 28px; right: 24px; }
     }
   </style>
 </head>
@@ -220,9 +227,7 @@
 
     </div>
 
-    <div class="divider"></div>
-
-    <!-- TIME ZONE TABLE -->
+    <!-- TIME ZONE TABLE — NO DIVIDER -->
     <div class="times">
       <p class="times-label">Your time</p>
       <div class="time-row anchor">
@@ -247,16 +252,20 @@
 
   </div>
 
+  <footer>
+    &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
+    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+  </footer>
+
+  <!-- FIXED BOTTOM-LEFT DOTS -->
   <div class="corner-dots">
     <span style="background:var(--accent-gold)"></span>
     <span style="background:var(--accent-purple)"></span>
     <span style="background:var(--accent-coral)"></span>
   </div>
 
-  <footer>
-    &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
-    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
-  </footer>
+  <!-- FIXED BOTTOM-RIGHT BRAND -->
+  <div class="corner-brand">kalya.io</div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
