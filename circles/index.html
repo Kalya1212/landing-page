@@ -23,11 +23,7 @@
       --accent-gold:   #F0C132;
       --border:        rgba(26,26,26,0.10);
     }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+    html, body { height: 100%; margin: 0; padding: 0; }
     body {
       font-family: 'Outfit', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -48,14 +44,6 @@
       align-items: center;
       gap: 28px;
     }
-    .logo-link {
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-    .logo-link:hover { opacity: 0.6; }
     .page-title {
       font-size: 40px;
       font-weight: 500;
@@ -64,8 +52,15 @@
       line-height: 1.2;
       margin: 0;
     }
+    .concept {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin: -8px 0 0 0;
+    }
     .tagline {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.7;
@@ -191,11 +186,12 @@
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
     @media (max-width: 700px) {
-      .page-title   { font-size: 30px; }
-      .tagline      { font-size: 16px; }
-      .circles      { gap: 32px; }
-      .corner-dots  { bottom: 24px; left: 24px; }
-      .corner-brand { bottom: 28px; right: 24px; }
+      .page-title  { font-size: 30px; }
+      .concept     { font-size: 18px; }
+      .tagline     { font-size: 15px; }
+      .circles     { gap: 32px; }
+      .corner-dots { bottom: 24px; left: 24px; }
+      .corner-brand{ bottom: 28px; right: 24px; }
     }
   </style>
 </head>
@@ -203,14 +199,9 @@
 
   <div class="hero">
 
-    <a href="https://kalya.io" class="logo-link">kalya</a>
-
     <h1 class="page-title">Kalya Circles</h1>
 
-    <p class="tagline">
-      Noon & Midnight.<br/>
-      Same moment, in presence, together.
-    </p>
+    <p class="concept">Noon & Midnight, New York.<br/>Same moment, in presence, together.</p>
 
     <p class="dates">Every day · March 29 – June 29, 2026</p>
 
@@ -225,11 +216,11 @@
       </div>
       <div class="time-row">
         <span class="city">🇫🇷 Paris (CET)</span>
-        <span class="time">6:00 PM & 6:00 AM</span>
+        <span class="time">6:00 AM & 6:00 PM</span>
       </div>
       <div class="time-row">
         <span class="city">🇬🇧 London (GMT)</span>
-        <span class="time">5:00 PM & 5:00 AM</span>
+        <span class="time">5:00 AM & 5:00 PM</span>
       </div>
       <div class="time-row">
         <span class="city">🇺🇸 Los Angeles (PT)</span>
@@ -243,17 +234,17 @@
     <div class="circles">
 
       <div class="circle-item">
-        <p class="label">🌅 Noon</p>
-        <div class="time-display">12:00 PM</div>
-        <p class="tz">New York · Every day</p>
+        <p class="label">🌅 Morning</p>
+        <div class="time-display">6:00 AM</div>
+        <p class="tz">Paris · Every day</p>
         <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
         <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">Add to Calendar</a>
       </div>
 
       <div class="circle-item">
-        <p class="label">🌙 Midnight</p>
-        <div class="time-display">12:00 AM</div>
-        <p class="tz">New York · Every day</p>
+        <p class="label">🌙 Evening</p>
+        <div class="time-display">6:00 PM</div>
+        <p class="tz">Paris · Every day</p>
         <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
         <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">Add to Calendar</a>
       </div>
