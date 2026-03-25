@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalya Circles — Same moment, in presence, together</title>
-  <meta name="description" content="Noon & Midnight. Same moment, in presence, together. Every day, March 29 – June 29, 2026." />
+  <title>kalya Circles — In presence, together</title>
+  <meta name="description" content="5 minutes. Twice a day. Every day. In presence, together." />
   <meta name="theme-color" content="#F2EDE6" />
-  <meta property="og:title" content="Kalya Circles" />
-  <meta property="og:description" content="Noon & Midnight. Same moment, in presence, together." />
+  <meta property="og:title" content="kalya Circles" />
+  <meta property="og:description" content="5 minutes. Twice a day. Every day. In presence, together." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kalya.io/circles" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -16,6 +16,7 @@
   <style>
     :root {
       --bg:            #F2EDE6;
+      --surface:       #FFFFFF;
       --text-primary:  #1A1A1A;
       --text-muted:    #9B9590;
       --accent-coral:  #D4756A;
@@ -36,7 +37,7 @@
     }
     .hero {
       width: 100%;
-      max-width: 520px;
+      max-width: 780px;
       padding: 80px 24px 40px;
       text-align: center;
       display: flex;
@@ -58,7 +59,7 @@
       color: var(--text-muted);
       line-height: 1.6;
       margin: -16px 0 0 0;
-      max-width: 400px;
+      max-width: 480px;
     }
     .dates {
       font-size: 15px;
@@ -69,7 +70,7 @@
     .circles {
       display: flex;
       flex-direction: row;
-      gap: 48px;
+      gap: 80px;
       justify-content: center;
       width: 100%;
       text-align: center;
@@ -85,12 +86,6 @@
       letter-spacing: -0.02em;
       color: var(--text-primary);
       line-height: 1.1;
-      margin-bottom: 6px;
-    }
-    .circle-item .sub {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--text-muted);
       margin-bottom: 20px;
     }
     .btn-group {
@@ -129,7 +124,7 @@
     }
     .times {
       width: 100%;
-      max-width: 420px;
+      max-width: 480px;
     }
     .times-label {
       font-size: 11px;
@@ -163,7 +158,7 @@
       margin-top: 20px;
       justify-content: flex-start;
       width: 100%;
-      max-width: 520px;
+      max-width: 780px;
       padding: 0 24px;
     }
     .corner-dots span {
@@ -185,7 +180,7 @@
       .page-title  { font-size: 52px; }
       .concept     { font-size: 19px; }
       .circle-item .time-word { font-size: 28px; }
-      .circles     { gap: 28px; }
+      .circles     { gap: 40px; }
     }
   </style>
 </head>
@@ -193,14 +188,14 @@
 
   <div class="hero">
 
-    <h1 class="page-title">Kalya Circles</h1>
+    <h1 class="page-title">kalya Circles</h1>
 
     <p class="concept">
-      Noon & Midnight, New York.<br/>
-      Same moment, in presence, together.
+      5 minutes. Twice a day. Every day.<br/>
+      In presence, together.
     </p>
 
-    <p class="dates">every day · March 29 – June 29, 2026</p>
+    <p class="dates">Noon & Midnight, New York · March 29 – June 29, 2026</p>
 
     <!-- CIRCLES -->
     <div class="circles">
@@ -208,7 +203,6 @@
       <div class="circle-item">
         <span class="icon">☀️</span>
         <div class="time-word">Noon</div>
-        <p class="sub">5 minutes · every day</p>
         <div class="btn-group">
           <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
           <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DEZvArOkKcuUjhpV7gAALAAAAMjT7T4DBHFb_1fg30o1tTvIW9jFNJVYZbgMIt20ypDPgW-BwgXucygt0Q9fB_IpG5W-_asePXzV668frjAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">📅 add to calendar</a>
@@ -218,7 +212,6 @@
       <div class="circle-item">
         <span class="icon">🌙</span>
         <div class="time-word">Midnight</div>
-        <p class="sub">5 minutes · every day</p>
         <div class="btn-group">
           <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
           <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DDIEbHWMqI2a9_tzfAAALAAAAOeYJ70d2RwzMpieG4cRYM_2gudd1-2s6UTDtbSISt0eOlIGqXV5yXha5DHqrvHiExakQYMepvBntgmY2DAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
@@ -254,7 +247,6 @@
 
   </div>
 
-  <!-- DOTS IN FLOW — NOT FIXED -->
   <div class="corner-dots">
     <span style="background:var(--accent-gold)"></span>
     <span style="background:var(--accent-purple)"></span>
