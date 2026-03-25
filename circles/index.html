@@ -67,6 +67,13 @@
       color: var(--text-muted);
       margin-top: -16px;
     }
+    .building {
+      font-size: 15px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: -16px;
+    }
     .circles {
       display: flex;
       flex-direction: row;
@@ -146,8 +153,6 @@
       color: var(--text-muted);
       line-height: 1.8;
     }
-
-    /* DESKTOP — fixed corners */
     .corner-dots {
       position: fixed;
       bottom: 36px;
@@ -174,11 +179,7 @@
       text-decoration: none;
     }
     .corner-brand:hover { opacity: 0.7; }
-
-    /* MOBILE — dots in flow, corners hidden */
-    .mobile-dots {
-      display: none;
-    }
+    .mobile-dots { display: none; }
     footer {
       margin-top: 40px;
       padding-bottom: 100px;
@@ -188,15 +189,14 @@
       font-weight: 300;
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
-
     @media (max-width: 700px) {
-      .page-title   { font-size: 52px; }
-      .concept      { font-size: 19px; }
+      .page-title  { font-size: 52px; }
+      .concept     { font-size: 19px; }
       .circle-item .time-word { font-size: 22px; }
-      .circles      { gap: 40px; }
-      .corner-dots  { display: none; }
-      .corner-brand { display: none; }
-      .mobile-dots  {
+      .circles     { gap: 40px; }
+      .corner-dots { display: none; }
+      .corner-brand{ display: none; }
+      .mobile-dots {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -212,9 +212,7 @@
         border-radius: 50%;
         display: inline-block;
       }
-      footer {
-        padding-bottom: 40px;
-      }
+      footer { padding-bottom: 40px; }
     }
   </style>
 </head>
@@ -230,6 +228,8 @@
     </p>
 
     <p class="dates">Noon & Midnight, New York · March 29 – June 29, 2026</p>
+
+    <p class="building">While we build kalya — come sit with us.</p>
 
     <!-- CIRCLES -->
     <div class="circles">
