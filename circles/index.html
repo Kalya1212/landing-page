@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalya Circles — One cherished breath at a time</title>
+  <meta name="description" content="Let us settle together, in presence, one cherished breath at a time. Twice a day. Online. Free." />
+  <meta name="theme-color" content="#F2EDE6" />
+  <meta property="og:title" content="Kalya Circles" />
+  <meta property="og:description" content="Let us settle together, in presence, one cherished breath at a time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kalya.io/circles" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:            #F2EDE6;
+      --surface:       #FFFFFF;
+      --text-primary:  #1A1A1A;
+      --text-muted:    #9B9590;
+      --accent-coral:  #D4756A;
+      --accent-purple: #9B8EC4;
+      --accent-gold:   #F0C132;
+      --border:        rgba(26,26,26,0.10);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .hero {
+      width: 100%;
+      max-width: 580px;
+      padding: 80px 24px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .logo-link {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .logo-link:hover { opacity: 0.6; }
+    .page-title {
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .tagline {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 380px;
+      margin: -16px 0 0 0;
+    }
+    .dates {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: -16px;
+    }
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: var(--border);
+    }
+    .times {
+      width: 100%;
+      max-width: 380px;
+    }
+    .times-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .time-row .city { color: var(--text-muted); }
+    .time-row .time { color: var(--text-primary); font-weight: 500; }
+    .circles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      max-width: 380px;
+    }
+    .circle-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .circle-card .label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .circle-card .time-display {
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .circle-card .tz {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.78; }
+    .btn-primary {
+      background: var(--text-primary);
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+    .welcome {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      text-align: center;
+    }
+    .corner-dots {
+      position: fixed;
+      bottom: 36px;
+      left: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .corner-dots span {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .corner-brand {
+      position: fixed;
+      bottom: 40px;
+      right: 36px;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .corner-brand:hover { opacity: 0.7; }
+    footer {
+      margin-top: 40px;
+      padding-bottom: 100px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--accent-purple); text-decoration: underline; }
+    @media (max-width: 700px) {
+      .page-title  { font-size: 32px; }
+      .tagline     { font-size: 17px; }
+      .corner-dots { bottom: 24px; left: 24px; }
+      .corner-brand{ bottom: 28px; right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+
+    <a href="https://kalya.io" class="logo-link">kalya</a>
+
+    <h1 class="page-title">Kalya Circles</h1>
+
+    <p class="tagline">
+      Let us settle together, in presence,<br/>
+      one cherished breath at a time.
+    </p>
+
+    <p class="dates">March 29 – June 29, 2026</p>
+
+    <div class="divider"></div>
+
+    <!-- TIME ZONES -->
+    <div class="times">
+      <p class="times-label">All times</p>
+      <div class="time-row"><span class="city">🇫🇷 Paris (CET)</span><span class="time">6:00 AM & 6:00 PM</span></div>
+      <div class="time-row"><span class="city">🇬🇧 London (GMT)</span><span class="time">5:00 AM & 5:00 PM</span></div>
+      <div class="time-row"><span class="city">🇺🇸 New York (ET)</span><span class="time">12:00 AM & 12:00 PM</span></div>
+      <div class="time-row"><span class="city">🇺🇸 Los Angeles (PT)</span><span class="time">9:00 PM & 9:00 AM</span></div>
+      <div class="time-row"><span class="city">🇦🇪 Dubai (GST)</span><span class="time">8:00 AM & 8:00 PM</span></div>
+      <div class="time-row"><span class="city">🇮🇳 Mumbai (IST)</span><span class="time">9:30 AM & 9:30 PM</span></div>
+      <div class="time-row"><span class="city">🇸🇬 Singapore (SGT)</span><span class="time">12:00 PM & 12:00 AM</span></div>
+      <div class="time-row"><span class="city">🇯🇵 Tokyo (JST)</span><span class="time">1:00 PM & 1:00 AM</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CIRCLE CARDS -->
+    <div class="circles">
+
+      <div class="circle-card">
+        <p class="label">🌅 Morning Circle</p>
+        <div class="time-display">6:00 AM</div>
+        <p class="tz">Paris · Every day</p>
+        <div class="btn-group">
+          <a href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" class="btn btn-primary" target="_blank">Join</a>
+          <a href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw" class="btn btn-secondary">Add to Calendar</a>
+        </div>
+      </div>
+
+      <div class="circle-card">
+        <p class="label">🌙 Evening Circle</p>
+        <div class="time-display">6:00 PM</div>
+        <p class="tz">Paris · Every day</p>
+        <div class="btn-group">
+          <a href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" class="btn btn-primary" target="_blank">Join</a>
+          <a href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw" class="btn btn-secondary">Add to Calendar</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="welcome">You are always welcome. 🙏</p>
+
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Kalya, 12l12 LLC &mdash;
+    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+  </footer>
+
+  <div class="corner-dots">
+    <span style="background:var(--accent-gold)"></span>
+    <span style="background:var(--accent-purple)"></span>
+    <span style="background:var(--accent-coral)"></span>
+  </div>
+
+  <a href="https://kalya.io" class="corner-brand">kalya.io</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
