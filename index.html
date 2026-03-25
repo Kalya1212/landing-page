@@ -6,16 +6,13 @@
   <title>Kalya — From intelligence to compassion.</title>
   <meta name="description" content="Kalya is your compassionate and trustworthy Noble Friend. Explainable AI, curated wisdom, and quiet design for daily calm, clarity, and compassion." />
   <meta name="theme-color" content="#F2EDE6" />
-
   <meta property="og:title" content="Kalya — From intelligence to compassion." />
   <meta property="og:description" content="Your compassionate and trustworthy Noble Friend." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kalya.io" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg:            #F2EDE6;
@@ -27,13 +24,11 @@
       --accent-gold:   #F0C132;
       --border:        rgba(26,26,26,0.10);
     }
-
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Outfit', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -44,7 +39,6 @@
       align-items: center;
       min-height: 100vh;
     }
-
     .hero {
       width: 100%;
       max-width: 780px;
@@ -55,36 +49,18 @@
       align-items: center;
       gap: 36px;
     }
-
     .logo-text {
       font-size: 76px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
     }
-
-    .dots {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-left: 8px;
-      vertical-align: middle;
-      position: relative;
-      top: -4px;
-    }
-
-    .dots span {
-      border-radius: 50%;
-      display: inline-block;
-    }
-
     .tagline {
       font-size: 28px;
       font-weight: 400;
       color: var(--text-primary);
       line-height: 1.35;
     }
-
     .subtitle {
       font-size: 22px;
       font-weight: 400;
@@ -93,7 +69,6 @@
       max-width: 520px;
       margin: 0 auto;
     }
-
     .mission {
       font-size: 19px;
       font-weight: 300;
@@ -102,7 +77,6 @@
       max-width: 560px;
       margin: 0 auto;
     }
-
     .cta {
       width: 100%;
       max-width: 460px;
@@ -113,7 +87,6 @@
       border-radius: 16px;
       border: 1px solid var(--border);
     }
-
     .cta input {
       flex: 1;
       padding: 13px 16px;
@@ -125,11 +98,9 @@
       outline: none;
       color: var(--text-primary);
     }
-
     .cta input::placeholder {
       color: var(--text-muted);
     }
-
     .cta button {
       padding: 13px 20px;
       border-radius: 10px;
@@ -143,58 +114,68 @@
       white-space: nowrap;
       transition: opacity 0.15s;
     }
-
     .cta button:hover {
       opacity: 0.88;
     }
-
+    .corner-dots {
+      position: fixed;
+      bottom: 36px;
+      left: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .corner-dots span {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .corner-brand {
+      position: fixed;
+      bottom: 40px;
+      right: 36px;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+    }
     footer {
       margin-top: 60px;
-      padding-bottom: 40px;
+      padding-bottom: 100px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
     }
-
     footer a {
       color: var(--accent-purple);
       text-decoration: underline;
     }
-
     @media (max-width: 700px) {
       .logo-text { font-size: 52px; }
       .tagline   { font-size: 22px; }
       .subtitle  { font-size: 18px; }
       .mission   { font-size: 16px; }
+      .corner-dots { bottom: 24px; left: 24px; }
+      .corner-brand { bottom: 28px; right: 24px; }
     }
   </style>
 </head>
-
 <body>
+
   <div class="hero">
-
-    <div class="logo-text">
-      kalya<span class="dots">
-        <span style="width:6px;height:6px;background:var(--accent-coral)"></span>
-        <span style="width:9px;height:9px;background:var(--accent-purple)"></span>
-        <span style="width:12px;height:12px;background:var(--accent-gold)"></span>
-      </span>
-    </div>
-
+    <div class="logo-text">kalya</div>
     <div class="tagline">From intelligence to compassion</div>
-
     <div class="subtitle">Your compassionate and trustworthy noble friend</div>
-
     <div class="mission">
       We are building the n°1 trusted AI solution for individuals and communities
       seeking grounded wisdom, mental clarity, and real presence in the digital age.
     </div>
-
     <form class="cta" id="waitlist" onsubmit="return submitWaitlist(event)">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit" id="cta-btn">Notify me</button>
     </form>
-
   </div>
 
   <footer>
@@ -202,9 +183,18 @@
     <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
   </footer>
 
+  <!-- Bottom-left dots -->
+  <div class="corner-dots">
+    <span style="background:var(--accent-gold)"></span>
+    <span style="background:var(--accent-purple)"></span>
+    <span style="background:var(--accent-coral)"></span>
+  </div>
+
+  <!-- Bottom-right brand -->
+  <div class="corner-brand">kalya.io</div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     function submitWaitlist(e) {
       e.preventDefault();
       const email = e.target.email.value.trim();
