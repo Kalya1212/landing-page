@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kalya Circles — Same moment, in presence, together</title>
-  <meta name="description" content="Same moment, in presence, together. Every day, March 29 – June 29, 2026." />
+  <meta name="description" content="Noon & Midnight. Same moment, in presence, together. Every day, March 29 – June 29, 2026." />
   <meta name="theme-color" content="#F2EDE6" />
   <meta property="og:title" content="Kalya Circles" />
   <meta property="og:description" content="Noon & Midnight. Same moment, in presence, together." />
@@ -53,26 +53,18 @@
       margin: 0;
     }
     .concept {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 400;
       color: var(--text-primary);
-      line-height: 1.5;
-      margin: -8px 0 0 0;
-    }
-    .tagline {
-      font-size: 17px;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 360px;
+      line-height: 1.6;
       margin: -8px 0 0 0;
     }
     .dates {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 300;
       color: var(--text-muted);
       margin-top: -8px;
+      letter-spacing: 0.01em;
     }
     .divider {
       width: 32px;
@@ -98,10 +90,10 @@
       border-bottom: 1px solid var(--border);
       font-size: 14px;
     }
-    .time-row .city { color: var(--text-muted); }
-    .time-row .time { color: var(--text-primary); font-weight: 500; }
+    .time-row .city { color: var(--text-muted); font-weight: 500; }
+    .time-row .time { color: var(--text-primary); font-weight: 300; }
     .time-row.anchor .city { color: var(--text-primary); font-weight: 500; }
-    .time-row.anchor .time { color: var(--text-primary); font-weight: 500; }
+    .time-row.anchor .time { color: var(--text-muted); font-weight: 300; }
     .circles {
       display: flex;
       flex-direction: row;
@@ -127,24 +119,41 @@
     }
     .circle-item .tz {
       font-size: 12px;
+      font-weight: 300;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .circle-item a.join {
-      display: block;
-      color: var(--text-primary);
+      display: inline-block;
+      color: var(--bg);
+      background: var(--text-primary);
       font-size: 14px;
       font-weight: 500;
-      text-decoration: underline;
-      margin-bottom: 8px;
+      text-decoration: none;
+      padding: 10px 28px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: opacity 0.15s;
     }
     .circle-item a.cal {
-      display: block;
-      color: var(--text-muted);
-      font-size: 12px;
-      text-decoration: underline;
+      display: inline-block;
+      color: var(--text-primary);
+      background: transparent;
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: opacity 0.15s;
     }
-    .circle-item a:hover { opacity: 0.6; }
+    .circle-item a:hover { opacity: 0.65; }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
     .welcome {
       font-size: 14px;
       font-weight: 300;
@@ -172,7 +181,7 @@
       right: 36px;
       font-family: 'Outfit', system-ui, sans-serif;
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--text-muted);
       text-decoration: none;
     }
@@ -183,13 +192,13 @@
       text-align: center;
       color: var(--text-muted);
       font-size: 12px;
+      font-weight: 300;
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
     @media (max-width: 700px) {
       .page-title  { font-size: 30px; }
-      .concept     { font-size: 18px; }
-      .tagline     { font-size: 15px; }
-      .circles     { gap: 32px; }
+      .concept     { font-size: 17px; }
+      .circles     { gap: 28px; }
       .corner-dots { bottom: 24px; left: 24px; }
       .corner-brand{ bottom: 28px; right: 24px; }
     }
@@ -201,9 +210,12 @@
 
     <h1 class="page-title">Kalya Circles</h1>
 
-    <p class="concept">Noon & Midnight, New York.<br/>Same moment, in presence, together.</p>
+    <p class="concept">
+      Noon & Midnight, New York.<br/>
+      Same moment, in presence, together.
+    </p>
 
-    <p class="dates">Every day · March 29 – June 29, 2026</p>
+    <p class="dates">every day · March 29 – June 29, 2026</p>
 
     <div class="divider"></div>
 
@@ -236,17 +248,21 @@
       <div class="circle-item">
         <p class="label">🌅 Morning</p>
         <div class="time-display">6:00 AM</div>
-        <p class="tz">Paris · Every day</p>
-        <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
-        <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">Add to Calendar</a>
+        <p class="tz">Paris · every day</p>
+        <div class="btn-group">
+          <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
+          <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
+        </div>
       </div>
 
       <div class="circle-item">
         <p class="label">🌙 Evening</p>
         <div class="time-display">6:00 PM</div>
-        <p class="tz">Paris · Every day</p>
-        <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
-        <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">Add to Calendar</a>
+        <p class="tz">Paris · every day</p>
+        <div class="btn-group">
+          <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
+          <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">📅 add to calendar</a>
+        </div>
       </div>
 
     </div>
