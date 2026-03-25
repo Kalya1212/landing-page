@@ -36,7 +36,7 @@
     }
     .hero {
       width: 100%;
-      max-width: 780px;
+      max-width: 520px;
       padding: 80px 24px 40px;
       text-align: center;
       display: flex;
@@ -49,23 +49,82 @@
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
-      line-height: 1.2;
+      line-height: 1.1;
       margin: 0;
     }
     .concept {
-      font-size: 28px;
-      font-weight: 400;
-      color: var(--text-primary);
-      line-height: 1.5;
-      margin: -8px 0 0 0;
-    }
-    .dates {
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 300;
       color: var(--text-muted);
-      margin-top: -8px;
-      letter-spacing: 0.01em;
+      line-height: 1.6;
+      margin: -16px 0 0 0;
+      max-width: 400px;
     }
+    .dates {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: -16px;
+    }
+    .circles {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+    .circle-item .label {
+      font-size: 13px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+    .circle-item .time-display {
+      font-size: 52px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .circle-item .tz {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .circle-item a.join {
+      display: inline-block;
+      color: var(--bg);
+      background: var(--text-primary);
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 10px;
+      transition: opacity 0.15s;
+    }
+    .circle-item a.cal {
+      display: inline-block;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 300;
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: opacity 0.15s;
+    }
+    .circle-item a:hover { opacity: 0.65; }
     .divider {
       width: 32px;
       height: 1px;
@@ -73,10 +132,10 @@
     }
     .times {
       width: 100%;
-      max-width: 460px;
+      max-width: 420px;
     }
     .times-label {
-      font-size: 13px;
+      font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -86,80 +145,19 @@
     .time-row {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      padding: 11px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 17px;
+      font-size: 16px;
     }
     .time-row .city { color: var(--text-muted); font-weight: 500; }
     .time-row .time { color: var(--text-primary); font-weight: 300; }
     .time-row.anchor .city { color: var(--text-primary); font-weight: 500; }
     .time-row.anchor .time { color: var(--text-muted); font-weight: 300; }
-    .circles {
-      display: flex;
-      flex-direction: row;
-      gap: 72px;
-      justify-content: center;
-      width: 100%;
-      max-width: 460px;
-      text-align: center;
-    }
-    .circle-item .label {
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-    .circle-item .time-display {
-      font-size: 52px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .circle-item .tz {
-      font-size: 17px;
-      font-weight: 300;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-    .circle-item a.join {
-      display: inline-block;
-      color: var(--bg);
-      background: var(--text-primary);
-      font-size: 15px;
-      font-weight: 500;
-      text-decoration: none;
-      padding: 11px 32px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      transition: opacity 0.15s;
-    }
-    .circle-item a.cal {
-      display: inline-block;
-      color: var(--text-primary);
-      background: transparent;
-      font-size: 14px;
-      font-weight: 400;
-      text-decoration: none;
-      padding: 10px 22px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: opacity 0.15s;
-    }
-    .circle-item a:hover { opacity: 0.65; }
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
     .welcome {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.8;
-      text-align: center;
     }
     .corner-dots {
       position: fixed;
@@ -179,7 +177,6 @@
       position: fixed;
       bottom: 40px;
       right: 36px;
-      font-family: 'Outfit', system-ui, sans-serif;
       font-size: 14px;
       font-weight: 300;
       color: var(--text-muted);
@@ -196,16 +193,12 @@
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
     @media (max-width: 700px) {
-      .page-title       { font-size: 52px; }
-      .concept          { font-size: 22px; }
-      .dates            { font-size: 16px; }
-      .time-row         { font-size: 15px; }
+      .page-title  { font-size: 52px; }
+      .concept     { font-size: 19px; }
       .circle-item .time-display { font-size: 38px; }
-      .circle-item .tz  { font-size: 15px; }
-      .welcome          { font-size: 16px; }
-      .circles          { gap: 36px; }
-      .corner-dots      { bottom: 24px; left: 24px; }
-      .corner-brand     { bottom: 28px; right: 24px; }
+      .circles     { gap: 36px; }
+      .corner-dots { bottom: 24px; left: 24px; }
+      .corner-brand{ bottom: 28px; right: 24px; }
     }
   </style>
 </head>
@@ -222,46 +215,11 @@
 
     <p class="dates">every day · March 29 – June 29, 2026</p>
 
-    <div class="divider"></div>
-
-    <!-- TIME ZONES -->
-    <div class="times">
-      <p class="times-label">Your time</p>
-      <div class="time-row anchor">
-        <span class="city">🇺🇸 New York (ET)</span>
-        <span class="time">Noon & Midnight</span>
-      </div>
-      <div class="time-row">
-        <span class="city">🇫🇷 Paris (CET)</span>
-        <span class="time">6:00 AM & 6:00 PM</span>
-      </div>
-      <div class="time-row">
-        <span class="city">🇬🇧 London (GMT)</span>
-        <span class="time">5:00 AM & 5:00 PM</span>
-      </div>
-      <div class="time-row">
-        <span class="city">🇺🇸 Los Angeles (PT)</span>
-        <span class="time">9:00 AM & 9:00 PM</span>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- CIRCLES SIDE BY SIDE -->
+    <!-- CIRCLES — LINKS FIRST -->
     <div class="circles">
 
       <div class="circle-item">
-        <p class="label">🌅 Morning</p>
-        <div class="time-display">6:00 AM</div>
-        <p class="tz">Paris · every day</p>
-        <div class="btn-group">
-          <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
-          <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
-        </div>
-      </div>
-
-      <div class="circle-item">
-        <p class="label">🌙 Evening</p>
+        <p class="label">☀️ Noon</p>
         <div class="time-display">6:00 PM</div>
         <p class="tz">Paris · every day</p>
         <div class="btn-group">
@@ -270,6 +228,39 @@
         </div>
       </div>
 
+      <div class="circle-item">
+        <p class="label">🌙 Midnight</p>
+        <div class="time-display">6:00 AM</div>
+        <p class="tz">Paris · every day</p>
+        <div class="btn-group">
+          <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
+          <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">📅 add to calendar</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- TIME ZONE TABLE — BOTTOM -->
+    <div class="times">
+      <p class="times-label">Your time</p>
+      <div class="time-row anchor">
+        <span class="city">🇺🇸 New York (ET)</span>
+        <span class="time">Noon & Midnight</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇫🇷 Paris (CET)</span>
+        <span class="time">6:00 PM & 6:00 AM</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇬🇧 London (GMT)</span>
+        <span class="time">5:00 PM & 5:00 AM</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇺🇸 Los Angeles (PT)</span>
+        <span class="time">9:00 AM & 9:00 PM</span>
+      </div>
     </div>
 
     <p class="welcome">You are always welcome. 🙏</p>
