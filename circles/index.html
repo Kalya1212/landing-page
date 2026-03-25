@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalya Circles — One cherished breath at a time</title>
-  <meta name="description" content="Let us settle together, in presence, one cherished breath at a time. Twice a day. Online. Free." />
+  <title>Kalya Circles — Same moment, in presence, together</title>
+  <meta name="description" content="Noon & Midnight. Same moment, in presence, together. Every day, March 29 – June 29, 2026." />
   <meta name="theme-color" content="#F2EDE6" />
   <meta property="og:title" content="Kalya Circles" />
-  <meta property="og:description" content="Let us settle together, in presence, one cherished breath at a time." />
+  <meta property="og:description" content="Noon & Midnight. Same moment, in presence, together." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kalya.io/circles" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -16,7 +16,6 @@
   <style>
     :root {
       --bg:            #F2EDE6;
-      --surface:       #FFFFFF;
       --text-primary:  #1A1A1A;
       --text-muted:    #9B9590;
       --accent-coral:  #D4756A;
@@ -41,16 +40,16 @@
     }
     .hero {
       width: 100%;
-      max-width: 580px;
+      max-width: 520px;
       padding: 80px 24px 40px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
     }
     .logo-link {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
@@ -58,7 +57,7 @@
     }
     .logo-link:hover { opacity: 0.6; }
     .page-title {
-      font-size: 44px;
+      font-size: 40px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
@@ -66,19 +65,19 @@
       margin: 0;
     }
     .tagline {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.7;
-      max-width: 380px;
-      margin: -16px 0 0 0;
+      max-width: 360px;
+      margin: -8px 0 0 0;
     }
     .dates {
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-top: -16px;
+      margin-top: -8px;
     }
     .divider {
       width: 32px;
@@ -87,7 +86,7 @@
     }
     .times {
       width: 100%;
-      max-width: 380px;
+      max-width: 340px;
     }
     .times-label {
       font-size: 11px;
@@ -102,70 +101,57 @@
       justify-content: space-between;
       padding: 10px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 15px;
+      font-size: 14px;
     }
     .time-row .city { color: var(--text-muted); }
     .time-row .time { color: var(--text-primary); font-weight: 500; }
+    .time-row.anchor .city { color: var(--text-primary); font-weight: 500; }
+    .time-row.anchor .time { color: var(--text-primary); font-weight: 500; }
     .circles {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
+      flex-direction: row;
+      gap: 52px;
+      justify-content: center;
       width: 100%;
-      max-width: 380px;
-    }
-    .circle-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 24px;
+      max-width: 340px;
       text-align: center;
     }
-    .circle-card .label {
+    .circle-item .label {
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 10px;
     }
-    .circle-card .time-display {
-      font-size: 38px;
+    .circle-item .time-display {
+      font-size: 34px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
       margin-bottom: 4px;
     }
-    .circle-card .tz {
-      font-size: 13px;
+    .circle-item .tz {
+      font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 16px;
     }
-    .btn-group {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-    .btn {
-      display: inline-block;
-      padding: 11px 22px;
-      border-radius: 10px;
+    .circle-item a.join {
+      display: block;
+      color: var(--text-primary);
       font-size: 14px;
       font-weight: 500;
-      font-family: inherit;
-      text-decoration: none;
-      transition: opacity 0.15s;
+      text-decoration: underline;
+      margin-bottom: 8px;
     }
-    .btn:hover { opacity: 0.78; }
-    .btn-primary {
-      background: var(--text-primary);
-      color: var(--bg);
+    .circle-item a.cal {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-decoration: underline;
     }
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
+    .circle-item a:hover { opacity: 0.6; }
     .welcome {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.8;
@@ -201,14 +187,15 @@
       padding-bottom: 100px;
       text-align: center;
       color: var(--text-muted);
-      font-size: 13px;
+      font-size: 12px;
     }
     footer a { color: var(--accent-purple); text-decoration: underline; }
     @media (max-width: 700px) {
-      .page-title  { font-size: 32px; }
-      .tagline     { font-size: 17px; }
-      .corner-dots { bottom: 24px; left: 24px; }
-      .corner-brand{ bottom: 28px; right: 24px; }
+      .page-title   { font-size: 30px; }
+      .tagline      { font-size: 16px; }
+      .circles      { gap: 32px; }
+      .corner-dots  { bottom: 24px; left: 24px; }
+      .corner-brand { bottom: 28px; right: 24px; }
     }
   </style>
 </head>
@@ -221,50 +208,54 @@
     <h1 class="page-title">Kalya Circles</h1>
 
     <p class="tagline">
-      Let us settle together, in presence,<br/>
-      one cherished breath at a time.
+      Noon & Midnight.<br/>
+      Same moment, in presence, together.
     </p>
 
-    <p class="dates">March 29 – June 29, 2026</p>
+    <p class="dates">Every day · March 29 – June 29, 2026</p>
 
     <div class="divider"></div>
 
     <!-- TIME ZONES -->
     <div class="times">
-      <p class="times-label">All times</p>
-      <div class="time-row"><span class="city">🇫🇷 Paris (CET)</span><span class="time">6:00 AM & 6:00 PM</span></div>
-      <div class="time-row"><span class="city">🇬🇧 London (GMT)</span><span class="time">5:00 AM & 5:00 PM</span></div>
-      <div class="time-row"><span class="city">🇺🇸 New York (ET)</span><span class="time">12:00 AM & 12:00 PM</span></div>
-      <div class="time-row"><span class="city">🇺🇸 Los Angeles (PT)</span><span class="time">9:00 PM & 9:00 AM</span></div>
-      <div class="time-row"><span class="city">🇦🇪 Dubai (GST)</span><span class="time">8:00 AM & 8:00 PM</span></div>
-      <div class="time-row"><span class="city">🇮🇳 Mumbai (IST)</span><span class="time">9:30 AM & 9:30 PM</span></div>
-      <div class="time-row"><span class="city">🇸🇬 Singapore (SGT)</span><span class="time">12:00 PM & 12:00 AM</span></div>
-      <div class="time-row"><span class="city">🇯🇵 Tokyo (JST)</span><span class="time">1:00 PM & 1:00 AM</span></div>
+      <p class="times-label">Your time</p>
+      <div class="time-row anchor">
+        <span class="city">🇺🇸 New York (ET)</span>
+        <span class="time">Noon & Midnight</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇫🇷 Paris (CET)</span>
+        <span class="time">6:00 PM & 6:00 AM</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇬🇧 London (GMT)</span>
+        <span class="time">5:00 PM & 5:00 AM</span>
+      </div>
+      <div class="time-row">
+        <span class="city">🇺🇸 Los Angeles (PT)</span>
+        <span class="time">9:00 AM & 9:00 PM</span>
+      </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- CIRCLE CARDS -->
+    <!-- CIRCLES SIDE BY SIDE -->
     <div class="circles">
 
-      <div class="circle-card">
-        <p class="label">🌅 Morning Circle</p>
-        <div class="time-display">6:00 AM</div>
-        <p class="tz">Paris · Every day</p>
-        <div class="btn-group">
-          <a href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" class="btn btn-primary" target="_blank">Join</a>
-          <a href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw" class="btn btn-secondary">Add to Calendar</a>
-        </div>
+      <div class="circle-item">
+        <p class="label">🌅 Noon</p>
+        <div class="time-display">12:00 PM</div>
+        <p class="tz">New York · Every day</p>
+        <a class="join" href="https://us06web.zoom.us/j/81601189001?pwd=HGubmBEZzlYVKGvqbMuaWGz44mGZn8.1" target="_blank">Join</a>
+        <a class="cal" href="https://us06web.zoom.us/meeting/tZUrd-ippjIqGtXkS1EEL9yjY-nFgf593N5x/ics?icsToken=DBq9_0S7U7NzU9DI5gAALAAAAP4vV1r58tp1cmB2bhaVZ7MIg2YPMSaAZiBLmF3g7KHOrnavYWY4Os755x2HBXvC4LfTSFlyBvvvLzPdXzAwMDAwMQ&meetingMasterEventId=zDjGy6siT7yRTlCBjy8Adw">Add to Calendar</a>
       </div>
 
-      <div class="circle-card">
-        <p class="label">🌙 Evening Circle</p>
-        <div class="time-display">6:00 PM</div>
-        <p class="tz">Paris · Every day</p>
-        <div class="btn-group">
-          <a href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" class="btn btn-primary" target="_blank">Join</a>
-          <a href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw" class="btn btn-secondary">Add to Calendar</a>
-        </div>
+      <div class="circle-item">
+        <p class="label">🌙 Midnight</p>
+        <div class="time-display">12:00 AM</div>
+        <p class="tz">New York · Every day</p>
+        <a class="join" href="https://us06web.zoom.us/j/87962795649?pwd=BaXmKeRVBz8SxZf05QyUBgekLR4U9b.1" target="_blank">Join</a>
+        <a class="cal" href="https://us06web.zoom.us/meeting/tZMkceuvpz4sHt0o96kqHP0F7C6Z1RnjiZ_e/ics?icsToken=DG2cqS22kXZzh4P31QAALAAAAGDBPia-o7h5g-cnSqBDM1F3XOWuNRhEM9B3_ZkwQdmgWN865BuimAZ_cloznuYXeb3oYwsl-WZk_vhgCzAwMDAwMQ&meetingMasterEventId=IKFfrtO9T1uOHBZonY8Unw">Add to Calendar</a>
       </div>
 
     </div>
