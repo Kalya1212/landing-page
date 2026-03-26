@@ -113,17 +113,24 @@
       padding: 12px 32px;
       border-radius: 10px;
       transition: opacity 0.15s;
+      width: 160px;
+      box-sizing: border-box;
+      text-align: center;
     }
     .circle-item a.cal {
       display: inline-block;
-      color: var(--text-muted);
+      color: var(--text-primary);
       background: transparent;
-      font-size: 12px;
-      font-weight: 300;
-      text-decoration: underline;
-      padding: 4px 0;
-      border: none;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 10px 32px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
       transition: opacity 0.15s;
+      width: 160px;
+      box-sizing: border-box;
+      text-align: center;
     }
     .circle-item a:hover { opacity: 0.65; }
     .times {
@@ -198,6 +205,8 @@
       .building    { font-size: 16px; }
       .circle-item .time-word { font-size: 22px; }
       .circles     { gap: 40px; }
+      .circle-item a.join { width: 140px; }
+      .circle-item a.cal  { width: 140px; }
       .corner-dots { display: none; }
       .corner-brand{ display: none; }
       .mobile-dots {
