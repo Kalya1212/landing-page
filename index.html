@@ -117,20 +117,6 @@
     .cta button:hover {
       opacity: 0.88;
     }
-    .corner-dots {
-      position: fixed;
-      bottom: 36px;
-      left: 36px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .corner-dots span {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: inline-block;
-    }
     .corner-brand {
       position: fixed;
       bottom: 40px;
@@ -157,8 +143,7 @@
       .tagline   { font-size: 22px; }
       .subtitle  { font-size: 18px; }
       .mission   { font-size: 16px; }
-      .corner-dots { bottom: 24px; left: 24px; }
-      .corner-brand { bottom: 28px; right: 24px; }
+      .corner-brand { display: none; }
     }
   </style>
 </head>
@@ -183,14 +168,6 @@
     <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
   </footer>
 
-  <!-- Bottom-left dots -->
-  <div class="corner-dots">
-    <span style="background:var(--accent-gold)"></span>
-    <span style="background:var(--accent-purple)"></span>
-    <span style="background:var(--accent-coral)"></span>
-  </div>
-
-  <!-- Bottom-right brand -->
   <div class="corner-brand">kalya.io</div>
 
   <script>
