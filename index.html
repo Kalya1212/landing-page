@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>kalya — come home.</title>
+  <title>Kalya — Come home.</title>
   <meta name="description" content="From loneliness to wholeness, through togetherness. Free Circles, twice daily, worldwide." />
   <meta name="theme-color" content="#F2EDE6" />
-  <meta property="og:title" content="kalya — come home." />
+  <meta property="og:title" content="Kalya — Come home." />
   <meta property="og:description" content="From loneliness to wholeness, through togetherness." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kalya.io" />
@@ -24,7 +24,11 @@
       --accent-gold:   #F0C132;
       --border:        rgba(26,26,26,0.10);
     }
-    html, body { height: 100%; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Outfit', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -37,55 +41,46 @@
     }
     .hero {
       width: 100%;
-      max-width: 620px;
+      max-width: 780px;
       padding: 80px 20px 40px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
-      flex: 1;
-      justify-content: center;
+      gap: 36px;
     }
     .logo-text {
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      color: var(--text-muted);
-      text-transform: lowercase;
-      margin-bottom: 24px;
-      animation: breath 8s ease-in-out infinite;
+      font-size: 76px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
     }
     .tagline {
-      font-size: 64px;
-      font-weight: 300;
+      font-size: 28px;
+      font-weight: 400;
       color: var(--text-primary);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 0;
-      text-transform: lowercase;
+      line-height: 1.35;
     }
-    .promise {
-      font-size: 20px;
-      font-weight: 300;
-      font-style: italic;
+    .subtitle {
+      font-size: 22px;
+      font-weight: 400;
       color: var(--text-muted);
-      line-height: 1.5;
-      max-width: 460px;
-      margin: 0 auto 24px;
+      line-height: 1.45;
+      max-width: 520px;
+      margin: 0 auto;
     }
     .doors {
+      width: 100%;
+      max-width: 460px;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      width: 100%;
-      max-width: 440px;
     }
     .door {
       display: block;
-      padding: 20px 24px;
+      padding: 18px 22px;
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
       color: var(--text-primary);
       background: var(--surface);
@@ -93,7 +88,7 @@
       font-family: inherit;
       width: 100%;
       text-align: center;
-      transition: border-color 0.4s ease, transform 0.4s ease;
+      transition: border-color 0.3s ease, transform 0.3s ease;
     }
     .door:hover {
       border-color: var(--text-primary);
@@ -103,48 +98,51 @@
       font-size: 17px;
       font-weight: 500;
       margin-bottom: 4px;
-      letter-spacing: -0.005em;
     }
     .door-note {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.4;
     }
-    .door-arriving .door-label { color: var(--text-muted); }
+    .door-arriving .door-label {
+      color: var(--text-muted);
+    }
     .corner-brand {
       position: fixed;
       bottom: 40px;
       right: 36px;
+      font-family: 'Outfit', system-ui, sans-serif;
       font-size: 14px;
+      font-weight: 400;
       color: var(--text-muted);
       letter-spacing: 0.01em;
     }
     footer {
-      padding: 40px 20px 60px;
+      margin-top: 60px;
+      padding-bottom: 100px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
     }
     footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+      color: var(--accent-purple);
+      text-decoration: underline;
     }
-    footer a:hover { border-bottom-color: var(--text-muted); }
 
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(26,26,26,0.4);
+      background: rgba(26, 26, 26, 0.4);
       display: none;
       align-items: center;
       justify-content: center;
       padding: 20px;
       z-index: 100;
     }
-    .modal-backdrop.open { display: flex; }
+    .modal-backdrop.open {
+      display: flex;
+    }
     .modal {
       background: var(--bg);
       padding: 44px 36px;
@@ -155,10 +153,9 @@
     }
     .modal h2 {
       font-size: 28px;
-      font-weight: 400;
+      font-weight: 500;
       margin: 0 0 12px;
       letter-spacing: -0.01em;
-      text-transform: lowercase;
     }
     .modal p {
       color: var(--text-muted);
@@ -178,10 +175,13 @@
       color: var(--text-primary);
       box-sizing: border-box;
     }
-    .modal input:focus { outline: none; border-color: var(--text-primary); }
+    .modal input:focus {
+      outline: none;
+      border-color: var(--text-primary);
+    }
     .modal button.primary {
       width: 100%;
-      padding: 13px;
+      padding: 13px 20px;
       background: var(--accent-gold);
       color: var(--text-primary);
       border: none;
@@ -190,9 +190,11 @@
       font-weight: 500;
       cursor: pointer;
       border-radius: 10px;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.15s;
     }
-    .modal button.primary:hover { opacity: 0.88; }
+    .modal button.primary:hover {
+      opacity: 0.88;
+    }
     .modal button.close {
       background: transparent;
       color: var(--text-muted);
@@ -204,49 +206,35 @@
       font-family: inherit;
     }
 
-    @keyframes breath {
-      0%, 100% { opacity: 0.55; }
-      50% { opacity: 0.9; }
-    }
-
     @media (max-width: 700px) {
-      .tagline { font-size: 44px; }
-      .promise { font-size: 17px; }
-      .logo-text { font-size: 18px; margin-bottom: 16px; }
+      .logo-text { font-size: 52px; }
+      .tagline   { font-size: 22px; }
+      .subtitle  { font-size: 18px; }
       .corner-brand { display: none; }
-      .hero { padding: 60px 20px 20px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .logo-text { animation: none; opacity: 0.75; }
-      .door:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-
   <div class="hero">
     <div class="logo-text">kalya</div>
-
-    <h1 class="tagline">come home.</h1>
-
-    <p class="promise">from loneliness to wholeness,<br>through togetherness.</p>
+    <div class="tagline">Come home.</div>
+    <div class="subtitle">From loneliness to wholeness,<br>through togetherness.</div>
 
     <div class="doors">
       <a href="/circles" class="door">
-        <div class="door-label">sit with us →</div>
-        <div class="door-note">circles — live now. noon and midnight, worldwide. free forever.</div>
+        <div class="door-label">Sit with us →</div>
+        <div class="door-note">Circles — live now. Noon and midnight, worldwide. Free forever.</div>
       </a>
 
-      <button class="door door-arriving" onclick="openNotify()" aria-label="notify me when grow with kalya opens">
-        <div class="door-label">grow with kalya →</div>
-        <div class="door-note">arriving soon. notify me.</div>
+      <button class="door door-arriving" onclick="openNotify()" aria-label="Notify me when Grow with kalya opens">
+        <div class="door-label">Grow with kalya →</div>
+        <div class="door-note">Arriving soon. Notify me.</div>
       </button>
     </div>
   </div>
 
   <footer>
-    &copy; <span id="year"></span> kalya, 12l12 llc &mdash;
+    &copy; <span id="year"></span> kalya, 12l12 LLC &mdash;
     <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
   </footer>
 
@@ -254,11 +242,11 @@
 
   <div class="modal-backdrop" id="notifyModal" onclick="if(event.target===this)closeNotify()" role="dialog" aria-modal="true" aria-labelledby="notifyTitle">
     <div class="modal">
-      <h2 id="notifyTitle">grow with kalya</h2>
-      <p>a companion for becoming.<br>we'll let you know when the door opens.</p>
+      <h2 id="notifyTitle">Grow with kalya</h2>
+      <p>A companion for becoming.<br>We'll let you know when the door opens.</p>
       <form id="notifyForm" onsubmit="return submitWaitlist(event)">
-        <input type="email" name="email" id="notifyEmail" placeholder="your email" required autocomplete="email" />
-        <button type="submit" class="primary" id="cta-btn">notify me</button>
+        <input type="email" name="email" id="notifyEmail" placeholder="Enter your email" required autocomplete="email" />
+        <button type="submit" class="primary" id="cta-btn">Notify me</button>
         <button type="button" class="close" onclick="closeNotify()">close</button>
       </form>
     </div>
@@ -269,7 +257,9 @@
 
     function openNotify() {
       document.getElementById('notifyModal').classList.add('open');
-      setTimeout(() => document.getElementById('notifyEmail').focus(), 50);
+      setTimeout(function() {
+        document.getElementById('notifyEmail').focus();
+      }, 50);
     }
 
     function closeNotify() {
@@ -278,18 +268,21 @@
 
     function submitWaitlist(e) {
       e.preventDefault();
-      const email = e.target.email.value.trim();
+      var email = e.target.email.value.trim();
       if (!email) return false;
-      const subject = encodeURIComponent('kalya waitlist');
-      const body = encodeURIComponent('please add me to the kalya waitlist: ' + email);
+      var subject = encodeURIComponent('Kalya waitlist');
+      var body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
       window.location.href = 'mailto:sylvie@kalya.io?subject=' + subject + '&body=' + body;
-      const btn = document.getElementById('cta-btn');
-      btn.textContent = 'opening…';
-      setTimeout(() => { btn.textContent = 'notify me'; closeNotify(); }, 2500);
+      var btn = document.getElementById('cta-btn');
+      btn.textContent = 'Opening…';
+      setTimeout(function() {
+        btn.textContent = 'Notify me';
+        closeNotify();
+      }, 2500);
       return false;
     }
 
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeNotify();
     });
   </script>
