@@ -70,40 +70,42 @@
       margin: 0 auto;
     }
     .doors {
-      width: 100%;
-      max-width: 460px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 32px;
+      align-items: center;
+      margin-top: 16px;
     }
     .door {
-      display: block;
-      padding: 18px 22px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      text-decoration: none;
-      color: var(--text-primary);
-      background: var(--surface);
+      background: none;
+      border: none;
+      padding: 0;
       cursor: pointer;
       font-family: inherit;
-      width: 100%;
       text-align: center;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .door:hover {
-      border-color: var(--text-primary);
-      transform: translateY(-1px);
+      text-decoration: none;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
     .door-label {
-      font-size: 17px;
+      font-size: 22px;
       font-weight: 500;
-      margin-bottom: 4px;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+      transition: border-color 0.3s ease;
+    }
+    .door:hover .door-label {
+      border-bottom-color: var(--text-primary);
     }
     .door-note {
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 15px;
       font-weight: 400;
-      line-height: 1.4;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
     .door-arriving .door-label {
       color: var(--text-muted);
@@ -210,6 +212,8 @@
       .logo-text { font-size: 52px; }
       .tagline   { font-size: 22px; }
       .subtitle  { font-size: 18px; }
+      .door-label { font-size: 19px; }
+      .door-note  { font-size: 14px; }
       .corner-brand { display: none; }
     }
   </style>
@@ -222,13 +226,13 @@
 
     <div class="doors">
       <a href="/circles" class="door">
-        <div class="door-label">Sit with us →</div>
-        <div class="door-note">Circles — live now. Noon and midnight, worldwide. Free forever.</div>
+        <span class="door-label">Sit with us →</span>
+        <span class="door-note">Circles — live now. Noon and midnight, worldwide. Free forever.</span>
       </a>
 
-      <button class="door door-arriving" onclick="openNotify()" aria-label="Notify me when Grow with kalya opens">
-        <div class="door-label">Grow with kalya →</div>
-        <div class="door-note">Arriving soon. Notify me.</div>
+      <button class="door door-arriving" onclick="openNotify()" aria-label="Notify me when Learn, practice and grow with kalya opens">
+        <span class="door-label">Learn, practice and grow with kalya →</span>
+        <span class="door-note">Arriving soon. Notify me.</span>
       </button>
     </div>
   </div>
@@ -242,7 +246,7 @@
 
   <div class="modal-backdrop" id="notifyModal" onclick="if(event.target===this)closeNotify()" role="dialog" aria-modal="true" aria-labelledby="notifyTitle">
     <div class="modal">
-      <h2 id="notifyTitle">Grow with kalya</h2>
+      <h2 id="notifyTitle">Learn, practice and grow with kalya</h2>
       <p>A companion for becoming.<br>We'll let you know when the door opens.</p>
       <form id="notifyForm" onsubmit="return submitWaitlist(event)">
         <input type="email" name="email" id="notifyEmail" placeholder="Enter your email" required autocomplete="email" />
