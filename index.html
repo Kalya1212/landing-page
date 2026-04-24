@@ -38,16 +38,21 @@
     .hero {
       width: 100%;
       max-width: 780px;
-      padding: 120px 24px 160px;
+      padding: 80px 24px 160px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 24px;
       flex: 1;
       justify-content: center;
     }
-    /* matches .page-title from circles */
+    .block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
     .logo-text {
       font-size: 76px;
       font-weight: 500;
@@ -56,7 +61,6 @@
       line-height: 1.1;
       margin: 0;
     }
-    /* matches .concept from circles */
     .tagline {
       font-size: 36px;
       font-weight: 400;
@@ -65,7 +69,6 @@
       margin: 0;
       max-width: 560px;
     }
-    /* matches .building from circles */
     .subtitle {
       font-size: 24px;
       font-weight: 300;
@@ -79,7 +82,7 @@
       flex-direction: column;
       gap: 44px;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 60px;
     }
     .door {
       background: none;
@@ -95,7 +98,6 @@
       align-items: center;
       gap: 10px;
     }
-    /* matches .time-word from circles */
     .door-label {
       font-size: 28px;
       font-weight: 500;
@@ -106,9 +108,7 @@
       gap: 12px;
       transition: opacity 0.3s ease;
     }
-    .door:hover .door-label {
-      opacity: 0.65;
-    }
+    .door:hover .door-label { opacity: 0.65; }
     .door-dot {
       width: 22px;
       height: 22px;
@@ -118,11 +118,10 @@
     }
     .dot-gold   { background: var(--accent-gold); }
     .dot-purple { background: var(--accent-purple); }
-    /* matches .dates from circles */
     .door-note {
       font-size: 19px;
       font-weight: 300;
-      color: var(--text-muted);
+      color: var(--text-primary);
       line-height: 1.5;
     }
     .corner-brand {
@@ -155,7 +154,6 @@
       transition: border-color 0.3s ease;
     }
     footer a:hover { border-bottom-color: var(--text-muted); }
-
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -212,7 +210,6 @@
       cursor: pointer;
       font-family: inherit;
     }
-
     @media (max-width: 700px) {
       .logo-text  { font-size: 52px; }
       .tagline    { font-size: 22px; }
@@ -225,9 +222,11 @@
 </head>
 <body>
   <div class="hero">
-    <div class="logo-text">kalya</div>
-    <div class="tagline">Come home.</div>
-    <div class="subtitle">From loneliness to wholeness,<br>through togetherness.</div>
+    <div class="block">
+      <div class="logo-text">kalya</div>
+      <div class="tagline">Come home.</div>
+      <div class="subtitle">From loneliness to wholeness,<br>through togetherness.</div>
+    </div>
 
     <div class="doors">
       <a href="/circles" class="door">
@@ -267,16 +266,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     function openNotify() {
       document.getElementById('notifyModal').classList.add('open');
       setTimeout(function() { document.getElementById('notifyEmail').focus(); }, 50);
     }
-
     function closeNotify() {
       document.getElementById('notifyModal').classList.remove('open');
     }
-
     function submitWaitlist(e) {
       e.preventDefault();
       var email = e.target.email.value.trim();
@@ -289,7 +285,6 @@
       setTimeout(function() { btn.textContent = 'Notify me'; closeNotify(); }, 2500);
       return false;
     }
-
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeNotify();
     });
