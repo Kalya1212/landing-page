@@ -38,15 +38,16 @@
     .hero {
       width: 100%;
       max-width: 780px;
-      padding: 80px 24px 140px;
+      padding: 120px 24px 160px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 24px;
+      gap: 40px;
       flex: 1;
       justify-content: center;
     }
+    /* matches .page-title from circles */
     .logo-text {
       font-size: 76px;
       font-weight: 500;
@@ -55,6 +56,7 @@
       line-height: 1.1;
       margin: 0;
     }
+    /* matches .concept from circles */
     .tagline {
       font-size: 36px;
       font-weight: 400;
@@ -63,6 +65,7 @@
       margin: 0;
       max-width: 560px;
     }
+    /* matches .building from circles */
     .subtitle {
       font-size: 24px;
       font-weight: 300;
@@ -74,9 +77,9 @@
     .doors {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 44px;
       align-items: center;
-      margin-top: 40px;
+      margin-top: 20px;
     }
     .door {
       background: none;
@@ -90,16 +93,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
+    /* matches .time-word from circles */
     .door-label {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       transition: opacity 0.3s ease;
     }
     .door:hover .door-label {
@@ -114,8 +118,9 @@
     }
     .dot-gold   { background: var(--accent-gold); }
     .dot-purple { background: var(--accent-purple); }
+    /* matches .dates from circles */
     .door-note {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.5;
@@ -211,9 +216,9 @@
     @media (max-width: 700px) {
       .logo-text  { font-size: 52px; }
       .tagline    { font-size: 22px; }
-      .subtitle   { font-size: 18px; }
-      .door-label { font-size: 20px; }
-      .door-note  { font-size: 14px; }
+      .subtitle   { font-size: 16px; }
+      .door-label { font-size: 22px; }
+      .door-note  { font-size: 16px; }
       .corner-brand { display: none; }
     }
   </style>
