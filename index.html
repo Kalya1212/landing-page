@@ -102,15 +102,6 @@
       transition: opacity 0.3s ease;
     }
     .door:hover { opacity: 0.65; }
-    .door-dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: block;
-      flex-shrink: 0;
-    }
-    .dot-gold   { background: var(--accent-gold); }
-    .dot-purple { background: var(--accent-purple); }
     .door-label {
       font-size: 28px;
       font-weight: 500;
@@ -212,12 +203,12 @@
       font-family: inherit;
     }
     @media (max-width: 700px) {
-      .logo-text  { font-size: 52px; }
-      .tagline    { font-size: 22px; }
-      .subtitle   { font-size: 16px; }
-      .door-label { font-size: 20px; }
+      .logo-text   { font-size: 52px; }
+      .tagline     { font-size: 22px; }
+      .subtitle    { font-size: 16px; }
+      .door-label  { font-size: 20px; }
       .door-action { font-size: 15px; }
-      .doors      { gap: 32px; }
+      .doors       { gap: 32px; }
       .corner-brand { display: none; }
     }
   </style>
@@ -232,7 +223,6 @@
 
     <div class="doors">
       <a href="/circles" class="door">
-        <span class="door-dot dot-gold"></span>
         <span class="door-label">kalya Togetherness</span>
         <span class="door-action">
           Be present.
@@ -244,13 +234,12 @@
       </a>
 
       <button class="door" onclick="openNotify()" aria-label="kalya Wholeness — stay aware">
-        <span class="door-dot dot-purple"></span>
         <span class="door-label">kalya Wholeness</span>
         <span class="door-action">
           Stay aware.
           <svg width="32" height="12" viewBox="0 0 32 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="6" x2="28" y2="6" stroke="#9B8EC4" stroke-width="1"/>
-            <polyline points="22,1 28,6 22,11" fill="none" stroke="#9B8EC4" stroke-width="1"/>
+            <line x1="0" y1="6" x2="28" y2="6" stroke="#1A1A1A" stroke-width="1"/>
+            <polyline points="22,1 28,6 22,11" fill="none" stroke="#1A1A1A" stroke-width="1"/>
           </svg>
         </span>
       </button>
