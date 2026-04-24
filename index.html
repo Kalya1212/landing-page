@@ -24,11 +24,7 @@
       --accent-gold:   #F0C132;
       --border:        rgba(26,26,26,0.10);
     }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+    html, body { height: 100%; margin: 0; padding: 0; }
     body {
       font-family: 'Outfit', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -42,40 +38,44 @@
     .hero {
       width: 100%;
       max-width: 780px;
-      padding: 80px 20px 40px;
+      padding: 80px 24px 40px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 36px;
+      gap: 24px;
     }
     .logo-text {
       font-size: 76px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
+      line-height: 1.1;
+      margin: 0;
     }
     .tagline {
       font-size: 36px;
       font-weight: 400;
       color: var(--text-primary);
       line-height: 1.35;
+      margin: 0;
+      max-width: 560px;
     }
     .subtitle {
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 300;
       font-style: italic;
       color: var(--text-muted);
       line-height: 1.45;
+      margin: 0;
       max-width: 520px;
-      margin: 0 auto;
     }
     .doors {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 28px;
       align-items: center;
-      margin-top: 16px;
+      margin-top: 12px;
     }
     .door {
       background: none;
@@ -92,7 +92,7 @@
       gap: 8px;
     }
     .door-label {
-      font-size: 22px;
+      font-size: 19px;
       font-weight: 500;
       color: var(--text-primary);
       border-bottom: 1px solid var(--border);
@@ -103,8 +103,8 @@
       border-bottom-color: var(--text-primary);
     }
     .door-note {
-      font-size: 15px;
-      font-weight: 400;
+      font-size: 16px;
+      font-weight: 300;
       color: var(--text-muted);
       line-height: 1.5;
     }
@@ -122,16 +122,15 @@
       letter-spacing: 0.01em;
     }
     footer {
-      margin-top: 60px;
+      margin-top: 40px;
       padding-bottom: 100px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
     }
-    footer a {
-      color: var(--accent-purple);
-      text-decoration: underline;
-    }
+    footer a { color: var(--accent-purple); text-decoration: underline; }
 
     .modal-backdrop {
       position: fixed;
@@ -143,9 +142,7 @@
       padding: 20px;
       z-index: 100;
     }
-    .modal-backdrop.open {
-      display: flex;
-    }
+    .modal-backdrop.open { display: flex; }
     .modal {
       background: var(--bg);
       padding: 44px 36px;
@@ -179,10 +176,7 @@
       color: var(--text-primary);
       box-sizing: border-box;
     }
-    .modal input:focus {
-      outline: none;
-      border-color: var(--text-primary);
-    }
+    .modal input:focus { outline: none; border-color: var(--text-primary); }
     .modal button.primary {
       width: 100%;
       padding: 13px 20px;
@@ -196,9 +190,7 @@
       border-radius: 10px;
       transition: opacity 0.15s;
     }
-    .modal button.primary:hover {
-      opacity: 0.88;
-    }
+    .modal button.primary:hover { opacity: 0.88; }
     .modal button.close {
       background: transparent;
       color: var(--text-muted);
@@ -211,12 +203,12 @@
     }
 
     @media (max-width: 700px) {
-      .logo-text { font-size: 52px; }
-      .tagline   { font-size: 22px; }
-      .subtitle  { font-size: 18px; }
-      .door-label { font-size: 19px; }
-      .door-note  { font-size: 14px; }
+      .logo-text  { font-size: 52px; }
+      .tagline    { font-size: 22px; }
+      .subtitle   { font-size: 16px; }
+      .door-label { font-size: 16px; }
       .corner-brand { display: none; }
+      footer { padding-bottom: 40px; }
     }
   </style>
 </head>
@@ -228,19 +220,19 @@
 
     <div class="doors">
       <a href="/circles" class="door">
-        <span class="door-label">kalya Circles →</span>
+        <span class="door-label">kalya Circles &rarr;</span>
       </a>
 
       <button class="door door-arriving" onclick="openNotify()" aria-label="Notify me when Learn, practice and grow with kalya opens">
-        <span class="door-label">Learn, practice and grow with kalya →</span>
+        <span class="door-label">Learn, practice and grow with kalya &rarr;</span>
         <span class="door-note">Arriving soon. Notify me.</span>
       </button>
     </div>
   </div>
 
   <footer>
-    &copy; <span id="year"></span> kalya, 12l12 LLC &mdash;
-    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+    &copy; <span id="year"></span> kalya&trade; &mdash; 12l12 LLC, Delaware USA. All rights reserved.<br>
+    <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a> &nbsp;&middot;&nbsp; <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
   </footer>
 
   <div class="corner-brand">kalya.io</div>
@@ -262,9 +254,7 @@
 
     function openNotify() {
       document.getElementById('notifyModal').classList.add('open');
-      setTimeout(function() {
-        document.getElementById('notifyEmail').focus();
-      }, 50);
+      setTimeout(function() { document.getElementById('notifyEmail').focus(); }, 50);
     }
 
     function closeNotify() {
@@ -279,11 +269,8 @@
       var body = encodeURIComponent('Please add me to the Kalya waitlist: ' + email);
       window.location.href = 'mailto:sylvie@kalya.io?subject=' + subject + '&body=' + body;
       var btn = document.getElementById('cta-btn');
-      btn.textContent = 'Opening…';
-      setTimeout(function() {
-        btn.textContent = 'Notify me';
-        closeNotify();
-      }, 2500);
+      btn.textContent = 'Opening\u2026';
+      setTimeout(function() { btn.textContent = 'Notify me'; closeNotify(); }, 2500);
       return false;
     }
 
