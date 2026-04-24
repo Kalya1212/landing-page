@@ -92,17 +92,27 @@
       gap: 8px;
     }
     .door-label {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
-      border-bottom: 1px solid var(--text-muted);
-      padding-bottom: 3px;
-      transition: border-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.3s ease;
     }
     .door:hover .door-label {
-      border-bottom-color: var(--text-primary);
+      opacity: 0.75;
     }
+    .door-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .dot-gold   { background: var(--accent-gold); }
+    .dot-purple { background: var(--accent-purple); }
     .door-note {
       font-size: 16px;
       font-weight: 300;
@@ -128,7 +138,13 @@
       font-weight: 300;
       line-height: 1.8;
     }
-    footer a { color: var(--accent-purple); text-decoration: underline; }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    footer a:hover { border-bottom-color: var(--text-muted); }
 
     .modal-backdrop {
       position: fixed;
@@ -160,6 +176,7 @@
       color: var(--text-muted);
       margin: 0 0 24px;
       font-size: 15px;
+      font-weight: 300;
       line-height: 1.5;
     }
     .modal input {
@@ -203,8 +220,8 @@
     @media (max-width: 700px) {
       .logo-text  { font-size: 52px; }
       .tagline    { font-size: 22px; }
-      .subtitle   { font-size: 16px; }
-      .door-label { font-size: 22px; }
+      .subtitle   { font-size: 18px; }
+      .door-label { font-size: 20px; }
       .door-note  { font-size: 14px; }
       .corner-brand { display: none; }
       footer { padding-bottom: 40px; }
@@ -219,12 +236,18 @@
 
     <div class="doors">
       <a href="/circles" class="door">
-        <span class="door-label">kalya Circles</span>
+        <span class="door-label">
+          kalya Circles
+          <span class="door-dot dot-gold"></span>
+        </span>
         <span class="door-note">5 minutes. Noon &amp; Midnight, NYC time. Together. Free.</span>
       </a>
 
       <button class="door" onclick="openNotify()" aria-label="Notify me when Learn, practice and grow with kalya opens">
-        <span class="door-label">Learn, practice and grow with kalya</span>
+        <span class="door-label">
+          Learn, practice and grow with kalya
+          <span class="door-dot dot-purple"></span>
+        </span>
         <span class="door-note">Arriving soon. Notify me.</span>
       </button>
     </div>
@@ -232,7 +255,7 @@
 
   <footer>
     &copy; <span id="year"></span> kalya&trade; &mdash; 12l12 LLC. All rights reserved.<br>
-    <a href="mailto:sylvie@kalya.io">sylvie@kalya.io</a>
+    <a href="mailto:sylvie@kalya.io">Sylvie Remangeon, Founder &amp; CEO of kalya</a>
   </footer>
 
   <div class="corner-brand">kalya.io</div>
