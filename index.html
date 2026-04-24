@@ -79,10 +79,12 @@
     }
     .doors {
       display: flex;
-      flex-direction: column;
-      gap: 44px;
-      align-items: center;
+      flex-direction: row;
+      gap: 80px;
+      justify-content: center;
+      align-items: flex-start;
       margin-top: 60px;
+      width: 100%;
     }
     .door {
       background: none;
@@ -96,33 +98,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      gap: 12px;
     }
-    .door-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      transition: opacity 0.3s ease;
-    }
-    .door:hover .door-line { opacity: 0.65; }
     .door-label {
       font-size: 28px;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.3s ease;
     }
-    .door-sep {
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--text-muted);
-    }
-    .door-note {
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--text-muted);
-      letter-spacing: -0.02em;
-    }
+    .door:hover .door-label { opacity: 0.65; }
     .door-dot {
       width: 22px;
       height: 22px;
@@ -132,6 +120,12 @@
     }
     .dot-gold   { background: var(--accent-gold); }
     .dot-purple { background: var(--accent-purple); }
+    .door-note {
+      font-size: 19px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
     .corner-brand {
       position: fixed;
       bottom: 40px;
@@ -223,8 +217,8 @@
       .tagline    { font-size: 22px; }
       .subtitle   { font-size: 16px; }
       .door-label { font-size: 22px; }
-      .door-note  { font-size: 22px; }
-      .door-sep   { font-size: 22px; }
+      .door-note  { font-size: 15px; }
+      .doors      { gap: 40px; }
       .corner-brand { display: none; }
     }
   </style>
@@ -239,21 +233,19 @@
 
     <div class="doors">
       <a href="/circles" class="door">
-        <div class="door-line">
-          <span class="door-label">kalya Circles</span>
+        <span class="door-label">
+          kalya Circles
           <span class="door-dot dot-gold"></span>
-          <span class="door-sep">&mdash;</span>
-          <span class="door-note">Be present.</span>
-        </div>
+        </span>
+        <span class="door-note">Be present.</span>
       </a>
 
       <button class="door" onclick="openNotify()" aria-label="kalya Wholeness — stay aware">
-        <div class="door-line">
-          <span class="door-label">kalya Wholeness</span>
+        <span class="door-label">
+          kalya Wholeness
           <span class="door-dot dot-purple"></span>
-          <span class="door-sep">&mdash;</span>
-          <span class="door-note">Stay aware.</span>
-        </div>
+        </span>
+        <span class="door-note">Stay aware.</span>
       </button>
     </div>
   </div>
